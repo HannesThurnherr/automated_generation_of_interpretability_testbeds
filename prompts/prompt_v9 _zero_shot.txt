@@ -1,0 +1,418 @@
+# Introduction to Task:
+
+Your assignment is to generate RASP (restricted access programming) programs capable of implementing a variety of algorithms using transformer-based operations. RASP allows you to articulate complex computational sequences in a format designed for transformers.
+
+# Your Task: make a rasp program that replaces each element with the product of it and the next element. example: [1, 2, 3, 4] --> [2, 6, 12, 4] Name the function that you can call to make this program ' make_product_with_next()'
+
+Keep your task in mind while reading this information.
+
+# Understanding RASP:
+
+RASP programs are unique in that they process input sequences and output transformed sequences of equivalent length. Every program is strictly linear. Avoid conditional branches or loops if possible. Instead, they rely on a series of operations that interpret and manipulate the input data in a sequence-to-sequence fashion.
+
+# Fundamental Principles:
+
+- Input and Output: Each RASP program receives an input sequence and yields an output sequence of identical length.
+- Structural Linearity: No variable length loops or branches; all operations flow in a straight line. If you make loops they should have a fixed length or dependent on a "max_sequence_length" parameter.
+- Operation Calls: Programs can only invoke core RASP functions or refer to other RASP programs.
+
+# Technical Operations Jargon:
+
+- Select: Matches elements from two sequences based on a comparison condition.
+- Aggregate: takes as input a selector and an s-op, and produces an s-op that averages the value of the s-op weighted by the selection matrix.
+- Map and SequenceMap: Transform sequence elements individually or in pairs, respectively.
+
+# Rules and Constraints:
+- Use provided operation types (Select, Aggregate, Map, SequenceMap) as the building blocks of your program. Feel free to be creative in how to combine them but remember which kind of output (Selector or Sop) they produce.
+- Each operation must be traceable and reproducible, implying a transparent translation from instructions to action.
+
+#Source Code
+To make you better understand the RASP language you can look at the following code. These are the most important parts of rasp.py. Use this as a reference to find out what kind of functions there are in RASP, which inputs they take and what they do.
+
+```python
+
+"""RASP program objects.
+
+class Map(SOp):
+  """SOp that evaluates the function elementwise on the input SOp.
+
+  Map(lambda x: x + 1, tokens).eval([1, 2, 3]) == [2, 3, 4]
+  """
+
+  def __init__(
+      self,
+      f: Callable[[Value], Value],
+      inner: SOp,
+      simplify: bool = True,
+  ):
+    """Initialises.
+
+    Args:
+      f: the function to apply elementwise.
+      inner: the SOp to which to apply `f`.
+      simplify: if True and if `inner` is also a Map, will combine the new map
+        and `inner` into a single Map object.
+    """
+    super().__init__()
+    self.f = f
+    self.inner = inner
+
+    assert isinstance(self.inner, SOp)
+    assert callable(self.f) and not isinstance(self.f, RASPExpr)
+
+    if simplify and isinstance(self.inner, Map):
+      # Combine the functions into just one.
+      inner_f = self.inner.f
+      self.f = lambda t: f(inner_f(t))
+      self.inner = self.inner.inner
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.inner]
+
+
+class SequenceMap(SOp):
+  """SOp that evaluates the function elementwise on the two given SOp's.
+
+  SequenceMap(lambda x, y: x - y, length, tokens).eval([1, 2, 3]) == [2, 1, 0]
+  """
+
+  def __init__(
+      self,
+      f: Callable[[Value, Value], Value],
+      fst: SOp,
+      snd: SOp,
+  ):
+    super().__init__()
+
+    if fst == snd:
+      logging.warning("Creating a SequenceMap with both inputs being the same "
+                      "SOp is discouraged. You should use a Map instead.")
+
+    self.f = f
+    self.fst = fst
+    self.snd = snd
+    assert isinstance(self.fst, SOp)
+    assert isinstance(self.snd, SOp)
+    assert callable(self.f) and not isinstance(self.f, RASPExpr)
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.fst, self.snd]
+
+
+class LinearSequenceMap(SequenceMap):
+  """SOp that evaluates a linear function elementwise on the two given SOp's."""
+
+  def __init__(self, fst: SOp, snd: SOp, fst_fac: float, snd_fac: float):
+    super().__init__(fst=fst, snd=snd, f=lambda x, y: fst_fac * x + snd_fac * y)
+    self.fst_fac = fst_fac
+    self.snd_fac = snd_fac
+
+
+### Selectors.
+
+class Comparison(enum.Enum):
+  """A two-place boolean comparison predicate for use in Select."""
+  EQ = "=="
+  LT = "<"
+  LEQ = "<="
+  GT = ">"
+  GEQ = ">="
+  NEQ = "!="
+  TRUE = "True"
+  FALSE = "False"
+
+  def __call__(self, key: Value, query: Value) -> bool:
+    if key is None:
+      raise ValueError("key is None!")
+    if query is None:
+      raise ValueError("query is None!")
+    return _comparison_table[self](key, query)
+
+
+_comparison_table = {
+    Comparison.EQ: lambda key, query: key == query,
+    Comparison.LT: lambda key, query: key < query,
+    Comparison.LEQ: lambda key, query: key <= query,
+    Comparison.GT: lambda key, query: key > query,
+    Comparison.GEQ: lambda key, query: key >= query,
+    Comparison.NEQ: lambda key, query: key != query,
+    Comparison.TRUE: lambda key, query: True,
+    Comparison.FALSE: lambda key, query: False,
+}
+
+
+class Selector(RASPExpr):
+  """RASP Selector. Represents something like an attention head's weights."""
+
+  def __call__(self, xs: Sequence[Value]) -> SelectorValue:
+    return evaluate(self, xs)  # pytype: disable=bad-return-type
+
+  # Allow construction of Selector combinations using Python logical operators.
+  def __and__(self, other: "Selector") -> "Selector":
+    """self & other."""
+    return selector_and(self, other)
+
+  def __rand__(self, other: "Selector") -> "Selector":
+    """other & self."""
+    return selector_and(other, self)
+
+  def __or__(self, other: "Selector") -> "Selector":
+    """self | other."""
+    return selector_or(self, other)
+
+  def __ror__(self, other: "Selector") -> "Selector":
+    """other | self."""
+    return selector_or(other, self)
+
+  def __invert__(self) -> "Selector":
+    """~self."""
+    return selector_not(self)
+
+
+class Select(Selector):
+  """Primitive that creates a Selector."""
+
+  def __init__(self, keys: SOp, queries: SOp, predicate: Predicate):
+    super().__init__()
+    self.keys = keys
+    self.queries = queries
+    self.predicate = predicate
+    assert isinstance(self.keys, SOp)
+    assert isinstance(self.queries, SOp)
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.keys, self.queries]
+
+
+class ConstantSelector(Selector):
+  """A constant selector for testing purposes."""
+
+  def __init__(self, value: SelectorValue, check_length: bool = True):
+    super().__init__()
+    self.value = value
+    self.check_length = check_length
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return []
+
+
+class SelectorWidth(SOp):
+  """SelectorWidth primitive."""
+
+  def __init__(self, selector: Selector):
+    super().__init__()
+    self.selector = selector
+    assert isinstance(self.selector, Selector)
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.selector]
+
+
+class SelectorAnd(Selector):
+  """Implements elementwise `and` between selectors."""
+
+  def __init__(self, fst: Selector, snd: Selector):
+    super().__init__()
+    self.fst = fst
+    self.snd = snd
+    assert isinstance(self.fst, Selector)
+    assert isinstance(self.snd, Selector)
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.fst, self.snd]
+
+
+class SelectorOr(Selector):
+  """Implements elementwise `or` between selectors."""
+
+  def __init__(self, fst: Selector, snd: Selector):
+    super().__init__()
+    self.fst = fst
+    self.snd = snd
+    assert isinstance(self.fst, Selector)
+    assert isinstance(self.snd, Selector)
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.fst, self.snd]
+
+
+class SelectorNot(Selector):
+  """Implements elementwise `not` on a selector."""
+
+  def __init__(self, inner: Selector):
+    self.inner = inner
+    super().__init__()
+    assert isinstance(self.inner, Selector)
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.inner]
+
+
+def selector_not(
+    inner: Selector,
+    simplify: bool = True,
+) -> Selector:
+  """Returns a SelectorNot, or a Select if simplifying is possible."""
+  if simplify and isinstance(inner, Select):
+    predicate = lambda k, q: not inner.predicate(k, q)
+    return Select(inner.keys, inner.queries, predicate=predicate)
+
+  return SelectorNot(inner)
+
+
+def selector_and(
+    fst: Selector,
+    snd: Selector,
+    simplify: bool = True,
+) -> Selector:
+  """Returns a SelectorAnd, or a Select if simplifying is possible."""
+  if simplify and isinstance(fst, Select) and isinstance(snd, Select):
+    simplified = _attempt_simplify(fst, snd, lambda l, r: l and r)
+    if simplified:
+      return simplified
+
+  return SelectorAnd(fst, snd)
+
+
+def selector_or(
+    fst: Selector,
+    snd: Selector,
+    simplify: bool = True,
+) -> Selector:
+  """Returns a SelectorOr, or a Select if simplifying is possible."""
+  if simplify and isinstance(fst, Select) and isinstance(snd, Select):
+    simplified = _attempt_simplify(fst, snd, lambda l, r: l or r)
+    if simplified:
+      return simplified
+
+  return SelectorOr(fst, snd)
+
+
+class Aggregate(SOp, Generic[VT]):
+  """Aggregate primitive."""
+
+  def __init__(self,
+               selector: Selector,
+               sop: SOp,
+               default: Optional[VT] = None):
+    """Initialises. The default is used where nothing is selected."""
+    super().__init__()
+    self.selector = selector
+    self.sop = sop
+    self.default = default
+    assert isinstance(self.selector, Selector)
+    assert isinstance(self.sop, SOp)
+    assert (self.default is None or isinstance(self.default,
+                                               (str, float, bool, int)))
+
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.selector, self.sop]
+
+```
+
+#Example Use Of Function:
+
+This is a selector of tokens applied to themselves with the "Greater Than" or GT comparison operator:
+
+>>>greater_than_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.GT).named("greater_than_selector")
+If applied to a rasp.tokens sequence like [1, 2, 3, 4] the selector will look like this:
+[False, True, True, True]
+[False, False, True, True]
+[False, False, False, True]
+[False, False, False, False]
+If we now apply this to rasp.tokens again with:
+>>>output = rasp.Aggregate(greater_than_selector, rasp.tokens, default = 0)
+Note that the default should be a number, character or "none". The dafault can not be a sequence(SOp), even if that sequence only has one number as entries. So something like "default = rasp.tokens" is not allowed.
+We will get an average of all the values selected in each row. Output looks like this:
+[3, 3.5, 4, 0]
+[
+3, #as an average of the selected 2,3 and 4
+3.5, #as and average of the selected 3 and 4
+4, #as an average of the selected 4
+0 #because none of the values were selected as none of them are greater that ne 4 at this position. So 0, which was given as the default value takes this spot.
+]
+Remember that aggregate takes an average and *not* a sum of the selected elements. This cannot be changed by giving the aggregate function a different selector. It always just takes the average.
+If we now call:
+>>>count_GT_selector = rasp.SelectorWidth(greater_than_selector)
+We will get a sequence that contains the count of the truth values in each row:
+[3,2,1,0]
+If we call:
+>>>map_count_GT = rasp.Map(lambda x: x*3+1, count_GT_selector)
+We will get a sequence where this lambda function has been applied to all the values of count_GT_selector:
+[10, 7, 4, 1]
+
+But if we call:
+>>>sequenceMap_combination = rasp.SequenceMap(lambda x, y: x*y+x, count_GT_selector, output)
+We get an output where the sequences "count_GT_selector" and "output" are combined element wise according to the lambda function.
+At this point "count_GT_selector" is [3,2,1,0] and output is [3, 3.5, 4, 0] so sequenceMap_combination is [12, 9, 5, 0]
+[
+12, #because 3 * 3 + 3 = 12
+9, #because 2 * 3.5 + 2 = 9
+5, #because 1 * 4 + 1 = 5
+0 #because 0 * 0 + 0 = 0
+]
+
+Start your process by looking at the examples and the RASP language basics then write down a plan based on the information in the files and the examples above and then write your program.
+If your plan includes the usage of certain functions, look up all of the allowed parameters for said functions, write them down before you start writing the program and make sure you do not make up any new parameters to any of the RASP functions.
+Note that you are not allowed to use the above examples as functions in your code. If you want to call functions like make_length() or shift_by() you have to rewrite them in your output code.
+
+#Format
+When giving an answer use the following Format:
+<Task>
+[Reiterate your understanding of the task and add an example of an input and the desired output.]
+</Task>
+
+<Plan>
+[Your plan on how the program should broadly work.]
+[Some details on which functions you'll have to use and what their inputs will be.]
+</Plan>
+
+<PlanVerification>
+[Look back at your plan. Will this really work? Is this compatible with the functionality of the functions you're using? Are you using your functions correctly? (Look at the source code to verify this) Answer these questions here explicitly]
+[List changes you have to make to the plan based on your verification]
+</PlanVerification>
+
+```python
+[write out your RASP-python code in a code block here]
+```
+<CodeVerification>
+[Look back at your code. Will this really work? Mentally simulate what the code is doing]
+[List specific changes you have to make to the code based on your verification. Avoid vague statements like "fix the logic"]
+</CodeVerification>
+#if the code is deemed to contain mistakes, give a revised version:
+
+```python
+[put the revised version of the code here]
+```
+
+
+# Your Task: make a rasp program that replaces each element with the product of it and the next element. example: [1, 2, 3, 4] --> [2, 6, 12, 4] Name the function that you can call to make this program ' make_product_with_next()'
+
+Examples provided are starting points; use them to grasp the syntax and structure required for RASP. From there, your original programs should follow these established patterns but are not limited to the examples' specific functions.
+
+Keep in mind:
+- To adhere strictly to RASP's core operations.
+- Keep your programs simple, if possible. (E.g. For identity just return rasp.tokens instead of rasp.Map(lambda x: x, rasp.tokens)
+- To meticulously comment your code for clarity.
+- To output functional, executable Python code utilising RASP's parameters.
+- To not import any additional packages. Write pure RASP code.
+- To provide functional complete python code, not pseudo code or placeholders.
+
+Also Note:
+- Do not import rasp. It is already imported. You should also not try to import the rasp components individually.
+- Aggregate functions should always have None as the default. (Which means you should leave the default as is). This is because we want to compile these functions later which only works with a default of None.
+- Again: do not use any functions from the example without defining them yourself. You cannot assume any function from the examples is already defined.
+- If your "make_x()" functions have additional parameters like "make_x(n = 3)" or "make_x(threshold = 2)"
+- Avoid the rasp.Full() functionality. It will prevent compiling. Instead of rasp.Full(n) use the following function: rasp.Map(lambda x: n, rasp.Indices)
+- Important: remember that the functions are not imported individually. You must use rasp functionalities like rasp.Map() with the "rasp." prefix, otherwise your code will not be correct. (This goes for all functions Map, SequenceMap, Select, Aggregate, and SelectorWidth)
+
+Endeavor to follow these guidelines to construct accurate and efficient RASP programs. Your expertise in Python will be fundamental to this task, so make sure that your code is both clean and precise, adhering to the RASP principles.
