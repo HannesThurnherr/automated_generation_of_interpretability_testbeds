@@ -26,8 +26,6 @@ class OpenAIChatModel(Model):
     def __init__(self, model_name: str):
         super().__init__(model_name)
         self.model_name = model_name
-        os.environ['OPENAI_API_KEY'] = input("your Openai API key: ")  # 'your_api_key'
-        self.tokenizer = tiktoken.encoding_for_model(model_name)
 
     def generate(self, prompt: str, system_prompt: str | None, stop_strings, **kwargs) -> str:
         #rest of the method
