@@ -1,3 +1,5 @@
+### Installing rasp eval
+
 To use RASP_eval you will need to install the tracr library (https://github.com/google-deepmind/tracr) with the following commands
 
 ```
@@ -10,7 +12,7 @@ the rest of the required packages can be installed using
 ```
 pip install requirements
 ```
-###Using RASP_eval
+### Using RASP_eval
 
 To use RASP_eval you must define a model class with a generate method. To do this you can let your class inherit from the abstract model class in the model.py file.
 
