@@ -2,8 +2,7 @@ import os
 from openai import OpenAI
 import json
 from RASP_eval import evaluate_model, visualize_results
-from RASP_eval import Model
-from concurrent.futures import ThreadPoolExecutor
+from abstract_model import Model
 from typing import Optional
 import backoff
 import tiktoken
