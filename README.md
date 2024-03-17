@@ -1,4 +1,4 @@
-### Installing rasp eval
+### Installing RASP_eval
 
 To use RASP_eval you will need to install the tracr library (https://github.com/google-deepmind/tracr) with the following commands
 
@@ -6,11 +6,14 @@ To use RASP_eval you will need to install the tracr library (https://github.com/
 git clone https://github.com/deepmind/tracr
 cd tracr
 pip3 install .
+cd ..
 ```
-the rest of the required packages can be installed using
 
+the rest of the requirements can be installed using
 ```
-pip install requirements
+git clone https://github.com/HannesThurnherr/automated_generation_of_interpretability_testbeds
+cd automated_generation_of_interpretability_testbeds
+pip install -r requirements.txt
 ```
 ### Using RASP_eval
 
