@@ -2,7 +2,7 @@
 
 Your assignment is to generate RASP (restricted access programming) programs capable of implementing a variety of algorithms using transformer-based operations. RASP allows you to articulate complex computational sequences in a format designed for transformers.
 
-# Your Task: make a rasp program that replaces each element with the sum of its digits. example: [12, 34, 56] --> [3, 7, 11] Name the function that you can call to make this program 'make_sum_digits()'
+# Your Task: make a rasp program that replaces each element with the parity (0 for even, 1 for odd) of its index. example: [5, 5, 5, 5] --> [0, 1, 0, 1] Name the function that you can call to make this program 'make_index_parity()'
 
 Keep your task in mind while reading this information.
 
@@ -1005,7 +1005,7 @@ def make_max() -> rasp.SOp:
 ```
 
 
-# Your Task: make a rasp program that replaces each element with the sum of its digits. example: [12, 34, 56] --> [3, 7, 11] Name the function that you can call to make this program 'make_sum_digits()'
+# Your Task: make a rasp program that replaces each element with the parity (0 for even, 1 for odd) of its index. example: [5, 5, 5, 5] --> [0, 1, 0, 1] Name the function that you can call to make this program 'make_index_parity()'
 
 Examples provided are starting points; use them to grasp the syntax and structure required for RASP. From there, your original programs should follow these established patterns but are not limited to the examples' specific functions.
 

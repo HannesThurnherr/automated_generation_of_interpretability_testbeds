@@ -12,7 +12,6 @@ from openai._exceptions import (
     APIConnectionError,
     RateLimitError,
 )
-from tqdm import tqdm
 import anthropic
 import google.generativeai as genai
 from replicate.client import Client
@@ -175,7 +174,8 @@ class LlamaChat:
 
 
 
-model = OpenAIChatModel("gpt-4-0125-preview")
-#model = AnthropicChatModel("claude-3-opus-20240229")
+#model = OpenAIChatModel("gpt-4-0125-preview")
+model = OpenAIChatModel("gpt-3.5-turbo-0125")
+#model = AnthropicChatModel("claude-3-haiku-20240307")
 results = evaluate_model(model)
 visualize_results(results)

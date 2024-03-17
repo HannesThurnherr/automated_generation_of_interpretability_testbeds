@@ -1,4 +1,4 @@
-import multiprocessing
+from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from abc import abstractmethod, ABC
 import numpy as np
 import math
@@ -14,13 +14,27 @@ from collections import Counter
 import logging
 from tqdm import tqdm
 
+def colored(r: int, g: int, b: int, text: str):
+    """
+    Color the text for better readability in the console output
+
+    Parameters:
+    - r: int, red in the rgb mix
+    - g: int, green in the rgb mix
+    - b: int, blue in the rgb mix
+
+    Returns:
+    The colored string, ready to be printeded: str
+    """
+    return "\033[38;2;{};{};{}m{}\033[0m".format(r, g, b, text)
+
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                     filename='process_task_log.txt', filemode='w')
-# To also print to console, add a StreamHandler
+# To also logging.info to console, add a StreamHandler
 console = logging.StreamHandler()
-console.setLevel(logging.ERROR)  # Change this to DEBUG or INFO for more verbose output in the console
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+console.setLevel(logging.INFO)  # Change this to DEBUG or INFO for more verbose output in the console
+formatter = logging.Formatter(colored(255,255,255,f'%(message)s'))
 console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
@@ -93,19 +107,7 @@ def extract_python_code(model_output: str):
         raise ValueError("No Python code block found.")
 
 
-def colored(r: int, g: int, b: int, text: str):
-    """
-    Color the text for better readability in the console output
 
-    Parameters:
-    - r: int, red in the rgb mix
-    - g: int, green in the rgb mix
-    - b: int, blue in the rgb mix
-
-    Returns:
-    The colored string, ready to be printed: str
-    """
-    return "\033[38;2;{};{};{}m{}\033[0m".format(r, g, b, text)
 
 
 # execute the produced rasp code
@@ -115,7 +117,7 @@ def test_run_op(op: rasp.SOp, verbose=True):
 
     Parameters:
     - op: rasp.SOp, rasp program to be tested
-    - verbose: boolean = True, determines whether the results are printed
+    - verbose: boolean = True, determines whether the results are logging.infoed
 
     Returns:
     The rasp operation: rasp.SOp
@@ -123,8 +125,7 @@ def test_run_op(op: rasp.SOp, verbose=True):
     input = [0, 3, 4, 1, -5, 4]  # this is a test array chosen because it contains 0, negative and positive elements and duplicats
     result = op(input)
     if verbose:
-        print("the function runs correctly.", input, "-->", end="")
-        print(result)
+        logging.info("the function runs correctly."+ str(input) + "-->"+str(result))
     return op
 
 
@@ -137,7 +138,7 @@ def test_op_with_ground_truth(op: rasp.SOp, fun, tests="None", verbose=True):
     - op: rasp.SOp, rasp program to be tested
     - fun: pyhton function, ground truth function that is used to generate the ground truth input-output pairs for the rasp op to be evaluated against
     - tests: list = None, a list where every entry is a dict with keys "input", "output" which each point to a list of integers. This pair is supposed to represent one example of the ground truth input output pair
-    - verbose: boolean = True, determines whether the results are printed
+    - verbose: boolean = True, determines whether the results are logging.infoed
 
     Returns:
     None
@@ -153,7 +154,7 @@ def test_op_with_ground_truth(op: rasp.SOp, fun, tests="None", verbose=True):
             if isinstance(ground_truth, float) or isinstance(ground_truth, int):
                 if not math.isclose(rasp_result[0], ground_truth, abs_tol=1e-10):
                     if verbose:
-                        print("array:", rand_arr, "rasp_result:", rasp_result, "ground_truth:", ground_truth)
+                        logging.info(f"array: {rand_arr} rasp_result: {rasp_result} ground_truth: {ground_truth}")
             else:
                 if not (len(rasp_result) == len(ground_truth) and all(math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
                     all_correct = False
@@ -168,7 +169,7 @@ def test_op_with_ground_truth(op: rasp.SOp, fun, tests="None", verbose=True):
                 n_errors += 1
     if all_correct:
         if verbose:
-            print("the rasp program is ground truth equivalent")
+            logging.info("the rasp program is ground truth equivalent")
     else:
         error_rate = n_errors / 1000 if tests == "None" else n_errors / len(tests)
         if verbose:
@@ -199,7 +200,7 @@ def test_op_with_validator(op, tests="None", verbose=True):
             rand_arr = test["input"]
             issues += dynamic_validate(op, rand_arr)
     if verbose:
-        print("number of issues found by the validator:", len(issues))
+        logging.info("number of issues found by the validator:"+str(len(issues)))
         assert len(issues) == 0, f"the following issue(s) were found by the validator: {issues[0]}"
     else:
         assert len(issues) == 0
@@ -226,11 +227,11 @@ def test_compileability(op: rasp.SOp, verbose=True):
             mlp_exactness=1000,
         )
         if verbose:
-            print("the model compiled correctly")
+            logging.info("the model compiled correctly")
         return model
     except Exception as e:
         if verbose:
-            print("the program did not compile correctly. This was the exception:\n", e)
+            logging.info("the program did not compile correctly. This was the exception:\n"+str(e))
         raise e
 
 
@@ -248,7 +249,7 @@ def test_weight_correctness(weights, op: rasp.SOp, tests="None", verbose=True):
     - weights: AssembledTransformerModel
     - op: rasp.SOp, rasp program to be tested
     - tests: list = None, a list where every entry is a dict with keys "input", "output" which each point to a list of integers. The input is used by the validator.
-    - verbose: boolean = True, determines whether the results are printed
+    - verbose: boolean = True, determines whether the results are logging.infoed
 
     Returns:
     None
@@ -281,8 +282,16 @@ def test_weight_correctness(weights, op: rasp.SOp, tests="None", verbose=True):
             else:
                 assert mo == ground_truth
     if weights_equivalent and verbose:
-        print("weights are equivalent to the rasp function")
+        logging.info("weights are equivalent to the rasp function")
 
+
+def run_with_timeout(func, args=(), kwargs={}, timeout=None):
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(func, *args, **kwargs)
+        try:
+            return future.result(timeout=timeout)
+        except TimeoutError:
+            return None  # or raise an Exception, e.g., raise TimeoutError("Function timed out")
 
 def process_task(model, task_data, promt_file, tries=5, verbose=True):
     """
@@ -306,57 +315,60 @@ def process_task(model, task_data, promt_file, tries=5, verbose=True):
     task = task_data["instruction"].split(";")[0]
     function_name = task_data["instruction"].split(";")[1].replace("\n", "").replace(" ","")
     if verbose:
-        print("-" * 180)
-        print("\nTask:", task)
-        print("Function Name:", function_name)
-        print("Modifying prompt")
+        logging.info("\n"+"-"* 180)
+        logging.info("\nTask: "+ task)
+        logging.info("Function Name: "+ function_name)
+        logging.info("Modifying prompt")
     replace_task_lines(promt_file, task.lower(), function_name)
     generated_rasp_code = ""
     for i in range(tries):
         if verbose:
-            print(f"Attempt {i + 1}")
+            logging.info(f"Attempt {i + 1}")
         stage = 0
         try:
-            if verbose: print("Generating RASP code")
+            if verbose: logging.info("Generating RASP code")
             prompt = open(promt_file).read()
             output = model.generate(prompt, system_prompt, "")
-            if verbose: print("GENERATED CODE:")
+            if verbose: logging.info("GENERATED CODE:")
             generated_rasp_code = extract_python_code(output)
             #generated_rasp_code = f"def {function_name}():\n\treturn rasp.Map(lambda x: x, rasp.tokens)"
-            if verbose: print(colored(0, 150, 200, generated_rasp_code))
+            if verbose: logging.info(colored(0, 150, 200, generated_rasp_code))
             exec_environment = {}
-            exec("from tracr.rasp import rasp\n"+generated_rasp_code, exec_environment)#+"\nop = " + function_name.replace(" ", "") + "()"+"\nprint(op)")
+            exec("from tracr.rasp import rasp\n"+generated_rasp_code, exec_environment)#+"\nop = " + function_name.replace(" ", "") + "()"+"\nlogging.info(op)")
             op = exec_environment[function_name.replace(" ", "")]()
-            test_run_op(op, verbose=verbose)
+            #test_run_op(op, verbose=verbose)
+            result = run_with_timeout(test_run_op, args=(op,), kwargs={'verbose': verbose}, timeout=10)
+            if result is None:
+                raise Exception("test_run_op timed out")
             stage = 1
-            if verbose: print("\nGround truth function:")
+            if verbose: logging.info("\nGround truth function:")
             ground_truth_function = task_data["ground_truth_function"]
-            if verbose: print(colored(0, 150, 200, ground_truth_function))
+            if verbose: logging.info(colored(0, 150, 200, ground_truth_function))
             exec(ground_truth_function, exec_environment)
             if verbose:
-                print("TESTS:")
-                print("Testing against ground truth:")
+                logging.info("TESTS:")
+                logging.info("Testing against ground truth:")
             fun = exec_environment["fun"]
             test_op_with_ground_truth(op, fun, tests=task_data["test_lists"], verbose=verbose)
 
             stage = 2
-            if verbose: print("Testing with tracr validator:")
+            if verbose: logging.info("Testing with tracr validator:")
             test_op_with_validator(op, tests=task_data["test_lists"], verbose=verbose)
             stage = 3
-            if verbose: print("Testing compileability:")
+            if verbose: logging.info("Testing compileability:")
             weights = test_compileability(op, verbose=verbose)
             stage = 4
-            if verbose: print("testing correctnes of the tracr transformer weights:")
+            if verbose: logging.info("testing correctnes of the tracr transformer weights:")
             test_weight_correctness(weights, op, tests=task_data["test_lists"], verbose=verbose)
             stage = 5
-            if verbose: print(colored(0, 255, 0, f"Testing complete\nGenerated correct function after {i + 1} tries"))
+            if verbose: logging.info(colored(0, 255, 0, f"Testing complete\nGenerated correct function after {i + 1} tries"))
             successes.append(generated_rasp_code)
             break
         except Exception as e:
             failures.append({"generated rasp code": generated_rasp_code, "failure stage": stage, "error": str(e)})
-            if verbose: print(colored(255, 0, 0, f"Failed at stage {stage} ({stages[stage]})\nError: " + str(e)))
+            if verbose: logging.info(colored(255, 0, 0, f"Failed at stage {stage} ({stages[stage]})\nError: " + str(e)))
             if i == tries - 1:
-                if verbose: print(f"failed to generate {function_name}")
+                if verbose: logging.info(f"failed to generate {function_name}")
     return successes, failures
 
 
@@ -366,7 +378,7 @@ def evaluate_model(model, verbose: bool = True):
 
     Parameters:
     - model, must be a language model object with a .generate function. The generate function should take this as input: model.generate(prompt, system_prompt, "") and return the completed response as a string
-    - verbose: boolean = True, determines whether the results are printed
+    - verbose: boolean = True, determines whether the results are logging.infoed
 
     Returns:
     results: dict, {"successes":successes, "failures":failures} successes is a dict of functional rasp strings where the function name like " make_sum_digits" is the key. Failures is also a dict with function names as key but each value is a list of dicts with this layout: {"generated rasp code": generated_rasp_code, "feilure stage": stage, "error": str(e)}
@@ -376,7 +388,7 @@ def evaluate_model(model, verbose: bool = True):
     suc, n_attempted_generations = 0, 0
     successes = {}
     failures = {}
-    promt_file = "prompt_v9_no_code_verification.txt"
+    promt_file = "prompt_full.txt"
     for key in  tqdm(data.keys(), desc="Evaluating Tasks"):
         task_successes, task_failures = process_task(model, data[key], promt_file, verbose=verbose)
         n_attempted_generations += 1
@@ -385,7 +397,7 @@ def evaluate_model(model, verbose: bool = True):
         successes[key] = task_successes
         failures[key] = task_failures
         if verbose:
-            print("\nSUCCESSRATE:", suc, "/", n_attempted_generations, "\n")
+            logging.info("\nSUCCESSRATE:" + str(suc) + "/"+str(n_attempted_generations)+ "\n")
     results = {"successes": successes, "failures": failures}
     with open(f'evaluation_results_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json', 'w') as f:
         json.dump(results, f, indent=4)
