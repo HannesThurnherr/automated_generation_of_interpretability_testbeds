@@ -12,6 +12,8 @@ from matplotlib.backends.backend_pdf import PdfPages
 from collections import Counter
 import logging
 from tqdm import tqdm
+from typing import Optional, List, Any
+from tracr.compiler.assemble import AssembledTransformerModel
 
 def colored(r: int, g: int, b: int, text: str):
     """
@@ -52,7 +54,7 @@ def replace_task_lines(file_path: str, task: str, function_name: str):
     Returns:
     None
     """
-    task = task + " Name the function that you can call to make this program '" + function_name + "()'"
+    task = f"{task} The function that you write should be called '{function_name}()'"
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             lines = file.readlines()
@@ -61,8 +63,8 @@ def replace_task_lines(file_path: str, task: str, function_name: str):
             lines = file.readlines()
     with open(file_path, 'w', encoding='utf-8') as file:
         for line in lines:
-            if line.startswith("# Your Task:"):
-                file.write("# Your Task: " + task + "\n")
+            if line.startswith("make a rasp program"):
+                file.write(task + "\n")
             else:
                 file.write(line)
 
@@ -92,7 +94,7 @@ def extract_python_code(model_output: str):
 
 
 # execute the produced rasp code
-def test_run_op(op: rasp.SOp, verbose=True):
+def check_op_runs(op: rasp.SOp, verbose=True):
     """
     Test whether a rasp operation actually runs on a generic input or whether the function already throws errors
 
@@ -111,7 +113,7 @@ def test_run_op(op: rasp.SOp, verbose=True):
 
 
 
-def test_op_with_ground_truth(op: rasp.SOp, fun, tests="None", verbose=True):
+def check_op_with_ground_truth(op: rasp.SOp, function, tests: Optional[List[Any]] = None, verbose=True):
     """
     Test whether a rasp operation computes the correct output based on 1000 examples. Throws errors if not
 
@@ -124,10 +126,10 @@ def test_op_with_ground_truth(op: rasp.SOp, fun, tests="None", verbose=True):
     Returns:
     None
     """
-    ground_truth_function = fun
+    ground_truth_function = function
     all_correct = True
     n_errors = 0
-    if tests == "None":
+    if tests is None:
         for i in range(1000):
             rand_arr = [np.random.randint(10) for _ in range((np.random.randint(5) + 1) * 2)]
             rasp_result = op(rand_arr)
@@ -152,14 +154,14 @@ def test_op_with_ground_truth(op: rasp.SOp, fun, tests="None", verbose=True):
         if verbose:
             logging.info("the rasp program is ground truth equivalent")
     else:
-        error_rate = n_errors / 1000 if tests == "None" else n_errors / len(tests)
+        error_rate = n_errors / 1000 if tests is None else n_errors / len(tests)
         if verbose:
             assert all_correct, f"the rasp program doesn't produce the correct output (for input [3,8,2,1,5,4]) --> {str(op([3, 8, 2, 1, 5, 4]))}. ({error_rate} error rate)"
         else:
             assert all_correct
 
 
-def test_op_with_validator(op, tests="None", verbose=True):
+def check_op_with_validator(op, tests: Optional[List[Any]] = None, verbose=True):
     """
     Test whether a rasp operation passes the validator that's integrated in tracr. This is meant to determine whether the program is fit to be compiled or whether the resulting weights will be erronious.
 
@@ -172,7 +174,7 @@ def test_op_with_validator(op, tests="None", verbose=True):
     None
     """
     issues = []
-    if tests == "None":
+    if tests is None:
         for i in range(1000):
             rand_arr = [np.random.randint(10) for _ in range((np.random.randint(5) + 1) * 2)]
             issues += dynamic_validate(op, rand_arr)
@@ -187,7 +189,7 @@ def test_op_with_validator(op, tests="None", verbose=True):
         assert len(issues) == 0
 
 
-def test_compileability(op: rasp.SOp, verbose=True):
+def check_compileability(op: rasp.SOp, verbose=True):
     """
     Test whether a rasp operation compiles into tracr-model-weights without errors.
 
@@ -217,12 +219,14 @@ def test_compileability(op: rasp.SOp, verbose=True):
 
 
 
-system_prompt = "As a skilled mathematician turned RASP programmer, your expertise lies in algorithm design and implementation. Your role involves crafting programs in RASP, a language with distinct characteristics. Approach each task methodically, breaking down problems into sequential steps. Pay close attention to the unique syntax and structure of RASP, as described, to ensure precise and effective programming solutions. Try to keep it simple and go for the most straightfroward solution. Your critical thinking and step-by-step reasoning are essential in navigating the challenges posed by this unique programming environment."
+system_prompt = "As a skilled mathematician turned RASP programmer, your expertise lies in algorithm design and implementation. Your role involves crafting programs in RASP, a programming language with distinct characteristics. Approach each task methodically, breaking down problems into sequential steps. Pay close attention to the unique syntax and structure of RASP, to ensure precise and effective programming solutions. Try to keep it simple and go for the most straightfroward solution. Your critical thinking and step-by-step reasoning are essential in navigating the challenges posed by this unique programming environment."
+#alternate system promt: generated by claude
+#system_prompt = "As an expert RASP programmer and mathematician, your role is to design and implement efficient algorithms using the unique syntax and structure of the RASP language. Approach each task methodically, breaking down problems into clear, sequential steps. Pay close attention to RASP-specific features and aim for simplicity and clarity in your code. Use your strong analytical skills to devise optimal solutions, considering input formats, edge cases, and time/space complexity. Provide well-formatted and thoroughly tested code, following the specified output format. Your precision, attention to detail, and dedication to crafting high-quality RASP solutions are highly valued."
 stages = {0: "defining op", 1: "testing function correctness", 2: "testing with validator", 3: "testing compileability", 4: "testing model correctness", 5: "success"}
 
 
 
-def test_weight_correctness(weights, op: rasp.SOp, tests="None", verbose=True):
+def check_weight_correctness(weights: AssembledTransformerModel, op: rasp.SOp, tests: Optional[List[Any]] = None, verbose=True):
     """
     Test whether the tracr transformer produces the same output as the rasp operation it was compiled from
 
@@ -236,7 +240,7 @@ def test_weight_correctness(weights, op: rasp.SOp, tests="None", verbose=True):
     None
     """
     weights_equivalent = True
-    if tests == "None":
+    if tests is None:
         for i in range(100):
             rand_arr = [np.random.randint(5) for i in range((np.random.randint(3) + 1) * 2)]
             example_input = rand_arr
@@ -274,9 +278,9 @@ def run_with_timeout(func, args=(), kwargs={}, timeout=None):
         except TimeoutError:
             return None  # or raise an Exception, e.g., raise TimeoutError("Function timed out")
 
-def process_task(model, task_data, promt_file, tries=5, verbose=True):
+def process_task(model: AssembledTransformerModel, task_data: dict, promt_file: str, tries:int=5, verbose:bool=True):
     """
-    Prompt a model to generate the rasp program specefied in the task_data using the prompt in a txt file.
+    Prompt a model to generate the rasp program specefied in the task_data using the prompt in a txt file. It then checks the generated code for various flaws. If it finds a flaw it records it and attempts again. It repeats this by default 5 times (as defined by the tries variable) and returns the results if no flaws are found or the 5th try is unsuccessful.
 
     Parameters:
     - model, must be a language model object with a .generate function. The generate function should take this as input: model.generate(prompt, system_prompt, "") and return the completed response as a string
@@ -312,13 +316,11 @@ def process_task(model, task_data, promt_file, tries=5, verbose=True):
             output = model.generate(prompt, system_prompt, "")
             if verbose: logging.info("GENERATED CODE:")
             generated_rasp_code = extract_python_code(output)
-            #generated_rasp_code = f"def {function_name}():\n\treturn rasp.Map(lambda x: x, rasp.tokens)"
             if verbose: logging.info(colored(0, 150, 200, generated_rasp_code))
             exec_environment = {}
             exec("from tracr.rasp import rasp\n"+generated_rasp_code, exec_environment)#+"\nop = " + function_name.replace(" ", "") + "()"+"\nlogging.info(op)")
             op = exec_environment[function_name.replace(" ", "")]()
-            #test_run_op(op, verbose=verbose)
-            result = run_with_timeout(test_run_op, args=(op,), kwargs={'verbose': verbose}, timeout=10)
+            result = run_with_timeout(check_op_runs, args=(op,), kwargs={'verbose': verbose}, timeout=10)
             if result is None:
                 raise Exception("test_run_op timed out")
             stage = 1
@@ -330,17 +332,17 @@ def process_task(model, task_data, promt_file, tries=5, verbose=True):
                 logging.info("TESTS:")
                 logging.info("Testing against ground truth:")
             fun = exec_environment["fun"]
-            test_op_with_ground_truth(op, fun, tests=task_data["test_lists"], verbose=verbose)
+            check_op_with_ground_truth(op, fun, tests=task_data["test_lists"], verbose=verbose)
 
             stage = 2
             if verbose: logging.info("Testing with tracr validator:")
-            test_op_with_validator(op, tests=task_data["test_lists"], verbose=verbose)
+            check_op_with_validator(op, tests=task_data["test_lists"], verbose=verbose)
             stage = 3
             if verbose: logging.info("Testing compileability:")
-            weights = test_compileability(op, verbose=verbose)
+            weights = check_compileability(op, verbose=verbose)
             stage = 4
             if verbose: logging.info("testing correctnes of the tracr transformer weights:")
-            test_weight_correctness(weights, op, tests=task_data["test_lists"], verbose=verbose)
+            check_weight_correctness(weights, op, tests=task_data["test_lists"], verbose=verbose)
             stage = 5
             if verbose: logging.info(colored(0, 255, 0, f"Testing complete\nGenerated correct function after {i + 1} tries"))
             successes.append(generated_rasp_code)
@@ -364,7 +366,7 @@ def evaluate_model(model, verbose: bool = True):
     Returns:
     results: dict, {"successes":successes, "failures":failures} successes is a dict of functional rasp strings where the function name like " make_sum_digits" is the key. Failures is also a dict with function names as key but each value is a list of dicts with this layout: {"generated rasp code": generated_rasp_code, "feilure stage": stage, "error": str(e)}
     """
-    with open('data.json', 'r') as file:
+    with open('eval_data.json', 'r') as file:
         data = json.load(file)
     suc, n_attempted_generations = 0, 0
     successes = {}

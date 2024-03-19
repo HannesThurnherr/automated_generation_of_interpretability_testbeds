@@ -2,7 +2,8 @@
 
 Your assignment is to generate RASP (restricted access programming) programs capable of implementing a variety of algorithms using transformer-based operations. RASP allows you to articulate complex computational sequences in a format designed for transformers.
 
-# Your Task: make a rasp program that replaces each element with the parity (0 for even, 1 for odd) of its index. example: [5, 5, 5, 5] --> [0, 1, 0, 1] Name the function that you can call to make this program 'make_index_parity()'
+# Your Task
+make a rasp program that replaces each element with the parity (0 for even, 1 for odd) of its index. example: [5, 5, 5, 5] --> [0, 1, 0, 1] Name the function that you can call to make this program 'make_index_parity()'
 
 Keep your task in mind while reading this information.
 
@@ -13,73 +14,72 @@ RASP programs are unique in that they process input sequences and output transfo
 # Fundamental Principles:
 
 - Input and Output: Each RASP program receives an input sequence and yields an output sequence of identical length.
-- Structural Linearity: No variable length loops or branches; all operations flow in a straight line. If you make loops they should have a fixed length or dependent on a "max_sequence_length" parameter.
+- Structural Linearity: No variable length loops or branches; all operations flow in a straight line. If you make loops they should have a fixed length or be dependent on a "max_sequence_length" parameter.
 - Operation Calls: Programs can only invoke core RASP functions or refer to other RASP programs.
 
-# Technical Operations Jargon:
+# Technical operational Jargon:
 
-- Select: Matches elements from two sequences based on a comparison condition.
-- Aggregate: takes as input a selector and an s-op, and produces an s-op that averages the value of the s-op weighted by the selection matrix.
-- Map and SequenceMap: Transform sequence elements individually or in pairs, respectively.
+- rasp.Select: Matches elements from two sequences based on a comparison condition.
+- rasp.Aggregate: takes as input a selector and an s-op, and produces an s-op that averages the value of the s-op weighted by the selection matrix.
+- rasp.Map and rasp.SequenceMap: Transform sequence elements individually or in pairs, respectively.
 
-#Function overview:
+# Function overview:
 Map:
-Function: Applies a function elementwise on the input SOp.
+Function: Applies a function element-wise on the input SOp.
 Syntax: Map(f: Callable[[Value], Value], inner: SOp)
 Example: Map(lambda x: x + 1, tokens) adds 1 to each element of tokens.
 
 SequenceMap:
-Function: Applies a function elementwise on two given SOps.
-Syntax: SequenceMap(f: Callable[[Value, Value], Value], fst: SOp, snd: SOp)
-Example: SequenceMap(lambda x, y: x - y, length, tokens) subtracts tokens from length.
+Function: Applies a function element-wise on two given SOps.
+Syntax: rasp.SequenceMap(f: Callable[[Value, Value], Value], fst: SOp, snd: SOp)
+Example: rasp.SequenceMap(lambda x, y: x - y, rasp.indices, rasp.tokens) subtracts tokens from indices.
 
 Aggregate:
 Function: Takes as input a selector and an s-op, and produces an s-op that averages the value of the s-op weighted by the selection matrix.
-Syntax: Aggregate(selector: Selector, sop: SOp, default: Optional[VT] = None)
-Example: Aggregate(select_all, any_negative, default=0) aggregates based on select_all.
+Syntax: rasp.Aggregate(selector: Selector, sop: SOp, default: Optional[VT] = None)
+Example: rasp.Aggregate(select_all, any_negative, default=0) aggregates based on select_all.
 
 Select:
 Function: Creates a selector to define relationships between elements of sequences.
-Syntax: Select(keys: SOp, queries: SOp, predicate: Predicate)
-Example: Select(rasp.indices, rasp.indices, rasp.Comparison.EQ) selects elements where indices are equal.
+Syntax: rasp.Select(keys: SOp, queries: SOp, predicate: Predicate)
+Example: rasp.Select(rasp.indices, rasp.indices, rasp.Comparison.EQ) selects elements where indices are equal.
 
-tokens, indices, length:
+tokens, indices:
 Tokens: Breaks input into a sequence of elements.
 Indices: Returns the position index at each token.
-Length: Returns the total length of the input.
 
-#Example use of above Functions:
+# Example use of above Functions:
 
 This is a selector of tokens applied to themselves with the "Greater Than" or GT comparison operator:
 
->>>greater_than_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.GT).named("greater_than_selector")
+greater_than_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.GT).named("greater_than_selector")
 If applied to a rasp.tokens sequence like [1, 2, 3, 4] the selector will look like this:
 [False, True, True, True]
 [False, False, True, True]
 [False, False, False, True]
 [False, False, False, False]
 If we now apply this to rasp.tokens again with:
->>>output = rasp.Aggregate(greater_than_selector, rasp.tokens, default = 0)
+output = rasp.Aggregate(greater_than_selector, rasp.tokens, default = 0)
 Note that the default should be a number, character or "none"
 We will get an average of all the values selected in each row. Output looks like this:
 [3, 3.5, 4, 0]
 [
 3, # as an average of the selected 2,3 and 4
-3.5, # as and average of the selected 3 and 4
+3.5, # as an average of the selected 3 and 4
 4, # as an average of the selected 4
-0 # because none of the values were selected as none of them are greater that ne 4 at this position. So 0, which was given as the default value takes this spot.
+0 #because none of the values were selected as none of them are greater than 4 at this position. So 0, which was given as the default value takes this spot.
 ]
 If we now call:
->>>count_GT_selector = rasp.SelectorWidth(greater_than_selector)
+count_GT_selector = rasp.SelectorWidth(greater_than_selector)
 We will get a sequence that contains the count of the truth values in each row:
 [3,2,1,0]
 If we call:
->>>map_count_GT = rasp.Map(lambda x: x*3+1, count_GT_selector)
+map_count_GT = rasp.Map(lambda x: x*3+1, count_GT_selector)
 We will get a sequence where this lambda function has been applied to all the values of count_GT_selector:
 [10, 7, 4, 1]
 
 But if we call:
->>>sequenceMap_combination = rasp.SequenceMap(lambda x, y: x*y+x, count_GT_selector, output)
+sequenceMap_combination = rasp.SequenceMap(lambda x, y: x*y+x, count_GT_selector, output)
 We get an output where the sequences "count_GT_selector" and "output" are combined element wise according to the lambda function.
 At this point "count_GT_selector" is [3,2,1,0] and output is [3, 3.5, 4, 0] so sequenceMap_combination is [12, 9, 5, 0]
 [
@@ -93,7 +93,7 @@ At this point "count_GT_selector" is [3,2,1,0] and output is [3, 3.5, 4, 0] so s
 - Use provided operation types (Select, Aggregate, Map, SequenceMap) as the building blocks of your program. Feel free to be creative in how to combine them but remember which kind of output (Selector or Sop) they produce.
 - Each operation must be traceable and reproducible, implying a transparent translation from instructions to action.
 
-#Source Code
+# Source Code
 To make you better understand the RASP language you can look at the following code. These are the most important parts of rasp.py. Use this as a reference to find out what kind of functions there are in RASP, which inputs they take and what they do.
 
 ```python
@@ -101,7 +101,7 @@ To make you better understand the RASP language you can look at the following co
 """RASP program objects.
 
 class Map(SOp):
-  """SOp that evaluates the function elementwise on the input SOp.
+  """SOp that evaluates the function element-wise on the input SOp.
 
   Map(lambda x: x + 1, tokens).eval([1, 2, 3]) == [2, 3, 4]
   """
@@ -115,7 +115,7 @@ class Map(SOp):
     """Initialises.
 
     Args:
-      f: the function to apply elementwise.
+      f: the function to apply element-wise.
       inner: the SOp to which to apply `f`.
       simplify: if True and if `inner` is also a Map, will combine the new map
         and `inner` into a single Map object.
@@ -128,7 +128,7 @@ class Map(SOp):
     assert callable(self.f) and not isinstance(self.f, RASPExpr)
 
     if simplify and isinstance(self.inner, Map):
-      # Combine the functions into just one.
+      # combine the functions into just one.
       inner_f = self.inner.f
       self.f = lambda t: f(inner_f(t))
       self.inner = self.inner.inner
@@ -139,7 +139,7 @@ class Map(SOp):
 
 
 class SequenceMap(SOp):
-  """SOp that evaluates the function elementwise on the two given SOp's.
+  """SOp that evaluates the function elemen-twise on the two given SOp's.
 
   SequenceMap(lambda x, y: x - y, length, tokens).eval([1, 2, 3]) == [2, 1, 0]
   """
@@ -169,7 +169,7 @@ class SequenceMap(SOp):
 
 
 class LinearSequenceMap(SequenceMap):
-  """SOp that evaluates a linear function elementwise on the two given SOp's."""
+  """SOp that evaluates a linear function element-wise on the two given SOp's."""
 
   def __init__(self, fst: SOp, snd: SOp, fst_fac: float, snd_fac: float):
     super().__init__(fst=fst, snd=snd, f=lambda x, y: fst_fac * x + snd_fac * y)
@@ -216,7 +216,7 @@ class Selector(RASPExpr):
   def __call__(self, xs: Sequence[Value]) -> SelectorValue:
     return evaluate(self, xs)  # pytype: disable=bad-return-type
 
-  # Allow construction of Selector combinations using Python logical operators.
+  # allow construction of Selector combinations using Python logical operators.
   def __and__(self, other: "Selector") -> "Selector":
     """self & other."""
     return selector_and(self, other)
@@ -595,25 +595,25 @@ def predecessor_difference() -> rasp.SOp:
     >>[0, -2, 4, -3, 6, -3]
     """
 
-    # Shift the input sequence by 1 to the right, and insert 0 at the beginning.
+    # shift the input sequence by 1 to the right, and insert 0 at the beginning.
     shifted_sequence = shift_by(1, rasp.tokens, 0)
 
-    # Subtract the shifted sequence from the original sequence to get the differences.
+    # subtract the shifted sequence from the original sequence to get the differences.
     differences = rasp.SequenceMap(lambda x, y: x - y, rasp.tokens, shifted_sequence).named("differences")
 
-    # Select the first element of the original sequence so it can be subtracted at the start of the "differences"-sequence
+    # select the first element of the original sequence so it can be subtracted at the start of the "differences"-sequence
     first_element_selector = rasp.Select(rasp.indices, rasp.tokens, lambda x,y: x==0)
     first_element = rasp.Aggregate(first_element_selector, rasp.tokens, default = 0)
 
-    #Create a sequence where the first entry is the negation of the first element of the original sequence and 0 everywhere else
+    # create a sequence where the first entry is the negation of the first element of the original sequence and 0 everywhere else
     first_element_adjuster = rasp.SequenceMap(lambda x,y: -y if x==0 else 0, rasp.indices, first_element)
     
-    #return the sum of the first_element_adjuster and the differences which just sets the first element of the differences to 0
+    # return the sum of the first_element_adjuster and the differences which just sets the first element of the differences to 0
     return differences+first_element_adjuster
 
 def make_multiply_all_elements(max_length = 5):
     '''
-    retruns the product of the first n elements in a sequence where n = "max_lenght" (for which the default is 5) 
+    returns the product of the first n elements in a sequence where n = "max_length" (for which the default is 5) 
     Example usage:
     multiply_all_elements = make_multiply_all_elements(max_length = 5)
     multiply_all_elements([1, 2, 3, 4])
@@ -700,7 +700,7 @@ def make_one_hot_first() -> rasp.SOp:
     # Select the first element of the input sequence
     first_elem_selector = rasp.Select(rasp.indices, rasp.indices, lambda x,y: x==0).named("first_elem_selector")
     first_elem = rasp.Aggregate(first_elem_selector, rasp.tokens, default=None).named("first_elem")
-    #places a 1 where the index is equal to the value of the first element
+    # places a 1 where the index is equal to the value of the first element
     one_hot_encoded_seq = rasp.SequenceMap(lambda x,y: 1 if x==y else 0, first_elem, rasp.indices)
 
     return one_hot_encoded_seq
@@ -830,13 +830,13 @@ def make_rolling_max(window_size: int, fill_value: rasp.Value) -> rasp.SOp:
 
 def make_elementwise_product_of_half_sequence() -> rasp.SOp:
     """
-    creates SOp that devides the sequence into it's first and second halves. and then multiplies these sequences elementwise.
+    creates SOp that devides the sequence into it's first and second halves. and then multiplies these sequences element-wise.
     Note this only works for sequences with an even number. For sequences with odd numbers the middle element will be included in both sequences.
 
     Example use:
     elementwise_product_of_half_sequence = make_elementwise_product_of_half_sequence()
     elementwise_product_of_half_sequence([1,2,3,4,5,6])
-    >>[4,4,10,10,18,18] #this is the element wise product of the first half ([1,1,2,2,3,3]) and the second half ([4,4,5,5,6,6])
+    >>[4,4,10,10,18,18] # this is the element wise product of the first half ([1,1,2,2,3,3]) and the second half ([4,4,5,5,6,6])
     """
     # Create a sequence of indices for the input sequence
     indices = rasp.indices.named("indices")
@@ -857,23 +857,23 @@ def make_elementwise_product_of_half_sequence() -> rasp.SOp:
     # Create a selector for the indices that are less than half the sequence length
     first_half_selector = rasp.Select(rasp.indices, rasp.indices, lambda y,x: y * 2 - 1 < x <= y * 2 + 1).named("first_half_selector")
 
-    #get the first half of the original tokens
+    # get the first half of the original tokens
     first_half = rasp.Aggregate(first_half_selector, rasp.tokens, default=None).named("duplicated_sequence")
 
-    #get the second half by taking the first half of the original sequence
-    #create a new selector so for uneven number of elements the first element is only included once instead of the last so [1,2,3,4,5] --> [1,2,2,3,3] instead of [1,1,2,2,3]
+    # get the second half by taking the first half of the original sequence
+    # create a new selector so for uneven number of elements the first element is only included once instead of the last so [1,2,3,4,5] --> [1,2,2,3,3] instead of [1,1,2,2,3]
     first_half_selector_rev = rasp.Select(rasp.indices, rasp.indices, lambda y,x: y * 2 - 1 <= x < y * 2 + 1).named("first_half_selector_rev")
     
-    #apply the selector to the reversed sequence with aggregate to get the second half (which is still in the reversed state)
+    # apply the selector to the reversed sequence with aggregate to get the second half (which is still in the reversed state)
     second_half_reversed = rasp.Aggregate(first_half_selector, reversed_sequence, default=None).named("second_half_reversed")
 
-    #reverse the second half again to get it in the correct order:    
+    # reverse the second half again to get it in the correct order:    
     second_half = rasp.Aggregate(reverse_selector, second_half_reversed).named("second_half")
     
-    #multiply the first and the second half elementwise
+    # multiply the first and the second half element-wise
     output = rasp.SequenceMap(lambda x,y: x*y, first_half, second_half)
     
-    #return the result
+    # return the result
     return  output
 
 def make_check_even() -> rasp.SOp:
@@ -884,43 +884,43 @@ def make_check_even() -> rasp.SOp:
 
 ```
 
-#Example Use Of Function:
+# Example Use Of Function:
 
 This is a selector of tokens applied to themselves with the "Greater Than" or GT comparison operator:
 
->>>greater_than_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.GT).named("greater_than_selector")
+greater_than_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.GT).named("greater_than_selector")
 If applied to a rasp.tokens sequence like [1, 2, 3, 4] the selector will look like this:
 [False, True, True, True]
 [False, False, True, True]
 [False, False, False, True]
 [False, False, False, False]
 If we now apply this to rasp.tokens again with:
->>>output = rasp.Aggregate(greater_than_selector, rasp.tokens, default = 0)
-Note that the default should be a number, character or "none". The dafault can not be a sequence(SOp), even if that sequence only has one number as entries. So something like "default = rasp.tokens" is not allowed.
+output = rasp.Aggregate(greater_than_selector, rasp.tokens, default = 0)
+Note that the default should be a number, character or "none". The default can not be a sequence(SOp), even if that sequence only has one number as entries. So something like "default = rasp.tokens" is not allowed.
 We will get an average of all the values selected in each row. Output looks like this:
 [3, 3.5, 4, 0]
 [
-3, #as an average of the selected 2,3 and 4
-3.5, #as and average of the selected 3 and 4
-4, #as an average of the selected 4
-0 #because none of the values were selected as none of them are greater that ne 4 at this position. So 0, which was given as the default value takes this spot.
+3, # as an average of the selected 2,3 and 4
+3.5, # as an average of the selected 3 and 4
+4, # as an average of the selected 4
+0 #because none of the values were selected as none of them are greater than 4 at this position. So 0, which was given as the default value takes this spot.
 ]
 Remember that aggregate takes an average and *not* a sum of the selected elements. This cannot be changed by giving the aggregate function a different selector. It always just takes the average.
 If we now call:
->>>count_GT_selector = rasp.SelectorWidth(greater_than_selector)
+count_GT_selector = rasp.SelectorWidth(greater_than_selector)
 We will get a sequence that contains the count of the truth values in each row:
 [3,2,1,0]
 If we call:
->>>map_count_GT = rasp.Map(lambda x: x*3+1, count_GT_selector)
+map_count_GT = rasp.Map(lambda x: x*3+1, count_GT_selector)
 We will get a sequence where this lambda function has been applied to all the values of count_GT_selector:
 [10, 7, 4, 1]
 
 But if we call:
->>>sequenceMap_combination = rasp.SequenceMap(lambda x, y: x*y+x, count_GT_selector, output)
-We get an output where the sequences "count_GT_selector" and "output" are combined element wise according to the lambda function.
+sequenceMap_combination = rasp.SequenceMap(lambda x, y: x*y+x, count_GT_selector, output)
+We get an output where the sequences "count_GT_selector" and "output" are combined element-wise according to the lambda function.
 At this point "count_GT_selector" is [3,2,1,0] and output is [3, 3.5, 4, 0] so sequenceMap_combination is [12, 9, 5, 0]
 [
-12, #because 3 * 3 + 3 = 12
+12, # because 3 * 3 + 3 = 12
 9, #because 2 * 3.5 + 2 = 9
 5, #because 1 * 4 + 1 = 5
 0 #because 0 * 0 + 0 = 0
@@ -930,8 +930,8 @@ Start your process by looking at the examples and the RASP language basics then 
 If your plan includes the usage of certain functions, look up all of the allowed parameters for said functions, write them down before you start writing the program and make sure you do not make up any new parameters to any of the RASP functions.
 Note that you are not allowed to use the above examples as functions in your code. If you want to call functions like make_length() or shift_by() you have to rewrite them in your output code.
 
-#Format
-When giving an answer use the following Format:
+# Format
+When giving an answer, use the following Format:
 <Task>
 [Reiterate your understanding of the task and add an example of an input and the desired output.]
 </Task>
@@ -962,6 +962,7 @@ max([1,2,6,-2,1]) >> [6,6,6,6,6]
 </Task>
 
 <Plan>
+
 1. Create a selector that compares each element with every other element using a "Less Than or Equal" (LEQ) comparison.
 2. Use SelectorWidth to count the number of elements that each element is less than or equal to.
 3. The maximum element will have a count equal to the length of the sequence, so create a selector that selects the elements where the count from step 2 equals the length of the sequence.
@@ -1005,23 +1006,24 @@ def make_max() -> rasp.SOp:
 ```
 
 
-# Your Task: make a rasp program that replaces each element with the parity (0 for even, 1 for odd) of its index. example: [5, 5, 5, 5] --> [0, 1, 0, 1] Name the function that you can call to make this program 'make_index_parity()'
+# Your Task 
+make a rasp program that replaces each element with the parity (0 for even, 1 for odd) of its index. example: [5, 5, 5, 5] --> [0, 1, 0, 1] Name the function that you can call to make this program 'make_index_parity()'
 
 Examples provided are starting points; use them to grasp the syntax and structure required for RASP. From there, your original programs should follow these established patterns but are not limited to the examples' specific functions.
 
 Keep in mind:
-- To adhere strictly to RASP's core operations.
+- Adhere strictly to RASP's core operations.
 - Keep your programs simple, if possible. (E.g. For identity just return rasp.tokens instead of rasp.Map(lambda x: x, rasp.tokens)
-- To meticulously comment your code for clarity.
-- To output functional, executable Python code utilising RASP's parameters.
-- To not import any additional packages. Write pure RASP code.
-- To provide functional complete python code, not pseudo code or placeholders.
+- Meticulously comment your code for clarity.
+- Output functional, executable Python code utilizing RASP's parameters.
+- Don't import any additional packages. Write pure RASP code.
+- Provide functional complete Python code, not pseudo code or placeholders.
 
 Also Note:
 - Do not import rasp. It is already imported. You should also not try to import the rasp components individually.
 - Aggregate functions should always have None as the default. (Which means you should leave the default as is). This is because we want to compile these functions later which only works with a default of None.
 -Again: do not use any functions from the example without defining them yourself. You cannot assume any function from the examples is already defined.
-- If your "make_x()" functions have additional parameters like "make_x(n = 3)" or "make_x(threshold = 2)"
+- If your "make_x()" functions have additional parameters like "make_x(n)" or "make_x(threshold)", you should always have a default value like make_x(threshold = 2)
 - Avoid the rasp.Full() functionality. It will prevent compiling. Instead of rasp.Full(n) use the following function: rasp.Map(lambda x: n, rasp.Indices)
 
 Endeavor to follow these guidelines to construct accurate and efficient RASP programs. Your expertise in Python will be fundamental to this task, so make sure that your code is both clean and precise, adhering to the RASP principles.
