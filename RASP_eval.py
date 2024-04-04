@@ -45,29 +45,50 @@ logging.getLogger('').addHandler(console)
 def replace_task_lines(file_path: str, task: str, function_name: str):
     """
     Replace task lines in a prompt file.
-
     Parameters:
     - file_path: str, path to the prompt file.
     - task: str, task description to be added.
     - function_name: str, name that the generated function should have.
-
     Returns:
     None
     """
-    task = f"{task} The function that you write should be called '{function_name}()'"
+    # Extract the example from the task
+    example_start = task.find("Example: ")
+    if example_start != -1:
+        example = task[example_start:]
+        task = task[:example_start].strip()
+    else:
+        example = ""
+
+    # Format the task and example
+    task_lines = [
+        "# Your Task",
+        f"{task}",
+        f"{example}",
+        f"Name the function that you can call to make this program '{function_name}()'"
+    ]
+
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             lines = file.readlines()
     except UnicodeDecodeError:
         with open(file_path, 'r', encoding='ISO-8859-1') as file:  # Try a different encoding
             lines = file.readlines()
+
     with open(file_path, 'w', encoding='utf-8') as file:
+        task_section_started = False
+        task_section_ended = False
         for line in lines:
-            if line.startswith("make a rasp program"):
-                file.write(task + "\n")
+            if line.startswith("# Your Task"):
+                task_section_started = True
+                task_section_ended = False
+                file.write("\n".join(task_lines) + "\n")
+            elif task_section_started and not task_section_ended:
+                if line.strip() == "":
+                    task_section_ended = True
+                    file.write(line)
             else:
                 file.write(line)
-
 
 def extract_python_code(model_output: str):
     """
@@ -275,8 +296,8 @@ def run_with_timeout(func, args=(), kwargs={}, timeout=None):
         future = executor.submit(func, *args, **kwargs)
         try:
             return future.result(timeout=timeout)
-        except TimeoutError:
-            return None  # or raise an Exception, e.g., raise TimeoutError("Function timed out")
+        except TimeoutError as e:
+            raise e
 
 def process_task(model: AssembledTransformerModel, task_data: dict, promt_file: str, tries:int=5, verbose:bool=True):
     """
@@ -304,7 +325,7 @@ def process_task(model: AssembledTransformerModel, task_data: dict, promt_file: 
         logging.info("\nTask: "+ task)
         logging.info("Function Name: "+ function_name)
         logging.info("Modifying prompt")
-    replace_task_lines(promt_file, task.lower(), function_name)
+    replace_task_lines(promt_file, task, function_name)
     generated_rasp_code = ""
     for i in range(tries):
         if verbose:
@@ -371,7 +392,7 @@ def evaluate_model(model, verbose: bool = True):
     suc, n_attempted_generations = 0, 0
     successes = {}
     failures = {}
-    promt_file = "prompt_full.txt"
+    promt_file = "prompts/prompt_full.txt"
     for key in  tqdm(data.keys(), desc="Evaluating Tasks"):
         task_successes, task_failures = process_task(model, data[key], promt_file, verbose=verbose)
         n_attempted_generations += 1
