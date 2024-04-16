@@ -123,8 +123,8 @@ class GeminiChatModel:
 
 
 #model = OpenAIChatModel("gpt-4-turbo-2024-04-09")
-#model = OpenAIChatModel("gpt-3.5-turbo-0125")
+model = OpenAIChatModel("gpt-3.5-turbo-0125")
 #model = AnthropicChatModel("claude-3-haiku-20240307")
-model = GeminiChatModel("models/gemini-pro")
+#model = GeminiChatModel("models/gemini-pro")
 results = evaluate_model(model)
 visualize_results(results)

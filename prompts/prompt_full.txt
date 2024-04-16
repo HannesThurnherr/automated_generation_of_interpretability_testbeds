@@ -2,9 +2,9 @@
 Your assignment is to generate RASP (Restricted Access Sequence Processing Language) programs capable of implementing a variety of algorithms using sequence operations. RASP allows you to articulate complex sequence to sequence in a format equivalent to what a neural network of the transformer architecture can do. RASP programs always output a sequence that has the same length as the input sequence. All of it's components also have this attribute.
 
 # Your Task
-Make a RASP program that returns the first element of the sequence.
-Example: [1, 2, 3] --> [1, 1, 1]
-Name the function that you can call to make this program 'make_first_element()'
+Make a RASP program that takes the absolute value of each element in the sequence.
+Example: [-1, 2, -3] --> [1, 2, 3]
+Name the function that you can call to make this program 'make_absolute()'
 
 
 Keep your task in mind while reading this information.
@@ -1036,9 +1036,9 @@ def make_max() -> rasp.SOp:
 
 
 # Your Task
-Make a RASP program that returns the first element of the sequence.
-Example: [1, 2, 3] --> [1, 1, 1]
-Name the function that you can call to make this program 'make_first_element()'
+Make a RASP program that takes the absolute value of each element in the sequence.
+Example: [-1, 2, -3] --> [1, 2, 3]
+Name the function that you can call to make this program 'make_absolute()'
 
 
 Examples provided are starting points; use them to grasp the syntax and structure required for RASP. From there, your original programs should follow these established patterns but are not limited to the examples' specific functions.

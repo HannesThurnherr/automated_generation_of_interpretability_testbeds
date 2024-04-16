@@ -133,6 +133,31 @@ def check_op_runs(op: rasp.SOp, verbose=True):
     return op
 
 
+def are_arrays_almost_equal(array1, array2, tolerance=1e-10):
+    """
+    Check if two arrays are almost equal within a specified tolerance. Both arrays are compared element by element. If all corresponding pairs of elements are within the given tolerance, the arrays are considered almost equal.
+
+    Parameters:
+    - array1: list, first array to be compared.
+    - array2: list, second array to be compared.
+    - tolerance: float = 1e-10, the tolerance level for comparing elements. Both relative and absolute tolerances are considered.
+
+    Returns:
+    - bool: True if arrays are almost equal within the tolerance, otherwise False.
+    """
+    if array1 == array2:
+      return True
+    if len(array1) != len(array2):
+        return False
+    for a, b in zip(array1, array2):
+        if a is None and b is None:
+            continue
+        if a is None or b is None:
+            return False
+        if not math.isclose(a, b, rel_tol=tolerance, abs_tol=tolerance):
+            return False
+    return True
+
 
 def check_op_with_ground_truth(op: rasp.SOp, function, tests: Optional[List[Any]] = None, verbose=True):
     """
@@ -155,24 +180,17 @@ def check_op_with_ground_truth(op: rasp.SOp, function, tests: Optional[List[Any]
             rand_arr = [np.random.randint(10) for _ in range((np.random.randint(5) + 1) * 2)]
             rasp_result = op(rand_arr)
             ground_truth = ground_truth_function(rand_arr)
-            if ground_truth != rasp_result:
-                if isinstance(ground_truth, float) or isinstance(ground_truth, int):
-                    if not math.isclose(rasp_result[0], ground_truth, abs_tol=1e-10):
-                        if verbose:
-                            logging.info(f"array: {rand_arr} rasp_result: {rasp_result} ground_truth: {ground_truth}")
-                else:
-                    if not (len(rasp_result) == len(ground_truth) and all(math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
-                        all_correct = False
-                        n_errors += 1
+            if not are_arrays_almost_equal(rasp_result,ground_truth):
+                    all_correct = False
+                    n_errors += 1
     else:
         for test in tests:
             rand_arr = test["input"]
             ground_truth = test["output"]
             rasp_result = op(rand_arr)
-            if ground_truth != rasp_result:
-                if not (len(rasp_result) == len(ground_truth) and all(a == b if a is None or b is None else math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
-                    all_correct = False
-                    n_errors += 1
+            if not are_arrays_almost_equal(rasp_result,ground_truth):
+                all_correct = False
+                n_errors += 1
     if all_correct:
         if verbose:
             logging.info("the rasp program is ground truth equivalent")
