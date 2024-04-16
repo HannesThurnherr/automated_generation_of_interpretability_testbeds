@@ -1,0 +1,2834 @@
+{
+    "successes": {
+        "make_sum_digits": [],
+        "make_absolute": [],
+        "make_first_element": [],
+        "make_nth_fibonacci": [],
+        "make_count_greater_than": [],
+        "make_double_first_half": [],
+        "make_decrement": [],
+        "make_count_frequency": [],
+        "make_increment_by_index": [],
+        "make_decrement_to_multiple_of_three": [],
+        "make_hyperbolic_cosine": [],
+        "make_check_fibonacci": [],
+        "make_square_root": [],
+        "make_increment_odd_indices": [],
+        "make_hyperbolic_tangent": [],
+        "make_hyperbolic_sine": [],
+        "make_zero_every_third": [],
+        "make_element_second": [],
+        "make_mirror_first_half": [],
+        "make_sorting": [],
+        "make_increment": [],
+        "make_rank": [],
+        "make_factorial": [],
+        "make_count_less_than": [],
+        "make_cube_each_element": [],
+        "make_cube_root": [],
+        "make_round": [],
+        "make_multiply_by_length": [],
+        "make_increment_to_multiple_of_three": [],
+        "make_sign": [],
+        "make_cosine": [],
+        "make_divide_by_length": [],
+        "make_negation": [],
+        "make_sine": [],
+        "make_histogram": [],
+        "make_element_double": [],
+        "make_zero_even_indices": [],
+        "make_tangent": [],
+        "make_count_occurrences": [],
+        "make_compute_median": [],
+        "make_halve_second_half": [],
+        "make_triple": [],
+        "make_arctangent": [],
+        "make_square_each_element": [],
+        "make_check_power_of_n": [],
+        "make_binarize": [],
+        "make_average_first_last": [],
+        "make_check_increasing": [],
+        "make_identity": [],
+        "make_apply_threshold": [],
+        "make_replace_small_tokens": [],
+        "make_swap_odd_index": [],
+        "make_check_descending": [],
+        "make_rotate_left": [],
+        "make_remove_duplicates": [],
+        "make_scale_by_max": [],
+        "make_sum_with_next": [],
+        "make_swap_elements": [],
+        "make_one_if_equal_to_next": [],
+        "make_swap_consecutive": [],
+        "make_check_palindrome": [],
+        "make_next_prime": [],
+        "make_mask_sequence": [],
+        "make_wrap": [],
+        "make_alternate_elements": [],
+        "make_check_last_two_equal": [],
+        "make_insert_zeros": [],
+        "make_last_element": [],
+        "make_difference_to_next": [],
+        "make_invert_if_sorted": [],
+        "make_logarithm": [],
+        "make_product_with_next": [],
+        "make_check_multiple_of_first": [],
+        "make_sum_of_last_two": [],
+        "make_pairwise_sum": [],
+        "make_polynomial": [],
+        "make_flip_halves": [],
+        "make_arcsine": [],
+        "make_check_divisibility": [],
+        "make_arccosine": [],
+        "make_check_all_equal": [],
+        "make_position": [],
+        "make_set_to_median": [],
+        "make_swap_min_max": [],
+        "make_clip": [],
+        "make_pairwise_max": [],
+        "make_check_alternating": [],
+        "make_exponential": [],
+        "make_interleave_reverse": [],
+        "make_element_divide": [],
+        "make_set_to_index": [],
+        "make_check_multiple_of_n": [],
+        "make_swap_first_last": [],
+        "make_test_at_least_two_equal": [],
+        "make_reflect": [],
+        "make_check_square": [],
+        "make_count_prime_factors": [],
+        "make_zero_if_less_than_previous": [],
+        "make_element_subtract_constant": [],
+        "make_check_prime": [],
+        "make_index_parity": []
+    },
+    "failures": {
+        "make_sum_digits": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_absolute": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_first_element": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_nth_fibonacci": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_count_greater_than": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_double_first_half": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_decrement": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_count_frequency": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_increment_by_index": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_decrement_to_multiple_of_three": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_hyperbolic_cosine": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_fibonacci": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_square_root": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_increment_odd_indices": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_hyperbolic_tangent": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_hyperbolic_sine": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_zero_every_third": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_element_second": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_mirror_first_half": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_sorting": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_increment": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_rank": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_factorial": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_count_less_than": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_cube_each_element": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_cube_root": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_round": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_multiply_by_length": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_increment_to_multiple_of_three": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_sign": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_cosine": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_divide_by_length": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_negation": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_sine": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_histogram": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_element_double": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_zero_even_indices": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_tangent": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_count_occurrences": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_compute_median": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_halve_second_half": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_triple": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_arctangent": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_square_each_element": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_power_of_n": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_binarize": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_average_first_last": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_increasing": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_identity": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_apply_threshold": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_replace_small_tokens": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_swap_odd_index": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_descending": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_rotate_left": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_remove_duplicates": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_scale_by_max": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_sum_with_next": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_swap_elements": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_one_if_equal_to_next": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_swap_consecutive": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_palindrome": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_next_prime": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_mask_sequence": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_wrap": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_alternate_elements": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_last_two_equal": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_insert_zeros": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_last_element": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_difference_to_next": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_invert_if_sorted": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_logarithm": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_product_with_next": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_multiple_of_first": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_sum_of_last_two": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_pairwise_sum": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_polynomial": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_flip_halves": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_arcsine": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_divisibility": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_arccosine": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_all_equal": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_position": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_set_to_median": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_swap_min_max": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_clip": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_pairwise_max": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_alternating": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_exponential": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_interleave_reverse": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_element_divide": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_set_to_index": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_multiple_of_n": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_swap_first_last": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_test_at_least_two_equal": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_reflect": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_square": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_count_prime_factors": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_zero_if_less_than_previous": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_element_subtract_constant": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_check_prime": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ],
+        "make_index_parity": [
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            },
+            {
+                "generated rasp code": "",
+                "failure stage": 0,
+                "error": "\"Could not recognize the intended type of the `dict`. A `Content` should have a 'parts' key. A `Part` should have a 'inline_data' or a 'text' key. A `Blob` should have 'mime_type' and 'data' keys. Got keys: ['role', 'content']\""
+            }
+        ]
+    }
+}

@@ -1,4 +1,6 @@
 import os
+import time
+
 from openai import OpenAI
 import json
 from RASP_eval import evaluate_model, visualize_results
@@ -62,23 +64,28 @@ class AnthropicChatModel(Model):
         self.client = anthropic.Anthropic(api_key=api_key)
 
     def generate(self, prompt: str, system_prompt: str, stop_strings: str, **kwargs) -> str:
-        messages = [{"role": "user", "content": prompt}]
-        params = {
-            "model": self.model_name,
-            "messages": messages,
-            "max_tokens": 4096,
-            "stop_sequences": [],
-        }
-        if system_prompt is not None:
-            params["system"] = system_prompt
-        completion = self.client.messages.create(**params)
-        if len(completion.content) == 0:
-            return ""
-        return completion.content[0].text
+        try:
+            messages = [{"role": "user", "content": prompt}]
+            params = {
+                "model": self.model_name,
+                "messages": messages,
+                "max_tokens": 4096,
+                "stop_sequences": [],
+            }
+            if system_prompt is not None:
+                params["system"] = system_prompt
+            completion = self.client.messages.create(**params)
+            if len(completion.content) == 0:
+                return ""
+            return completion.content[0].text
+        except:
+            print("pausing for 60 seconds")
+            time.sleep(60)
+            return self.generate(prompt, system_prompt, stop_strings, **kwargs)
 
 
 class GeminiChatModel:
-    def __init__(self, model_name, api_key):
+    def __init__(self, model_name):
         self.model_name = model_name
         genai.configure(api_key=input("your Gemini API key: "))
         self.client = genai.GenerativeModel(model_name)
@@ -102,7 +109,7 @@ class GeminiChatModel:
         }
 
         # Execute the request and handle the response.
-        response = self.client.generate_content(**params)
+        response = self.client.generate_content(prompt)
 
         # Extract the text from the response if available.
         if response and hasattr(response, 'text'):
@@ -113,68 +120,11 @@ class GeminiChatModel:
 
 
 
-class LlamaChat:
-    B_INST, E_INST = "[INST]", "[/INST]"
-    B_SYS, E_SYS = "<<SYS>>\n", "\n<</SYS>>\n\n"
-
-    def __init__(self, model_name: str) -> None:
-        self.model_name = model_name
-        self.model = Client(os.getenv("REPLICATE_API_KEY"))
-
-    @backoff.on_exception(backoff.expo, Exception, max_value=60, factor=1.5)
-    def generate(
-        self,
-        prompt: str,
-        max_tokens: int,
-        temperature: float,
-        stop_strings: list[str] | None,
-        system_prompt: Optional[str] = None,
-        prepend_completion: Optional[str] = None,
-    ):
-        if temperature == 0:
-            temperature = 0.01
-
-        # if you ask for 1 token, you get 0 back, but if you ask for 2, you get 1 back
-        max_tokens += 1
-
-        # referred to these links for the below code:
-        # https://github.com/facebookresearch/llama/blob/main/llama/generation.py#L324-L362
-        # https://github.com/replicate/cog-llama-template/blob/main/predict.py#L20-L23
-        if system_prompt:
-            prompt_template = (
-                f"{self.B_INST} {self.B_SYS}{{system_prompt}}{self.E_SYS}{{prompt}} {self.E_INST}"
-            )
-        else:
-            prompt_template = f"{self.B_INST} {{prompt}} {self.E_INST}"
-
-        if prepend_completion:
-            prompt_template = f"{prompt_template}{prepend_completion}"
-
-        inputs = {
-            "prompt": prompt,
-            "max_new_tokens": max_tokens,
-            "temperature": temperature,
-            "prompt_template": prompt_template,
-        }
-        if system_prompt is not None:
-            inputs["system_prompt"] = system_prompt
-        completion = self.model.run(self.model_name, input=inputs)
-        completion = "".join(completion)
-
-        # handle stop strings
-        if stop_strings is not None:
-            for stop_token in stop_strings:
-                completion = completion.split(stop_token)[0]
-
-        return completion
 
 
-
-
-
-
-#model = OpenAIChatModel("gpt-4-0125-preview")
-model = OpenAIChatModel("gpt-3.5-turbo-0125")
+#model = OpenAIChatModel("gpt-4-turbo-2024-04-09")
+#model = OpenAIChatModel("gpt-3.5-turbo-0125")
 #model = AnthropicChatModel("claude-3-haiku-20240307")
+model = GeminiChatModel("models/gemini-pro")
 results = evaluate_model(model)
 visualize_results(results)

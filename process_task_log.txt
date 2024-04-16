@@ -1,64 +1,76 @@
-2024-04-04 14:00:21,384 - INFO - 
+2024-04-15 17:59:49,205 - INFO - 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-2024-04-04 14:00:21,385 - INFO - 
+2024-04-15 17:59:49,205 - INFO - 
 Task: Make a RASP program that replaces each element with the sum of its digits. Example: [12, 34, 56] --> [3, 7, 11]
-2024-04-04 14:00:21,385 - INFO - Function Name: make_sum_digits
-2024-04-04 14:00:21,385 - INFO - Modifying prompt
-2024-04-04 14:00:21,386 - INFO - Attempt 1
-2024-04-04 14:00:21,386 - INFO - Generating RASP code
-2024-04-04 14:00:25,544 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-04-04 14:00:25,550 - INFO - GENERATED CODE:
-2024-04-04 14:00:25,550 - INFO - [38;2;0;150;200mdef make_sum_digits() -> rasp.SOp:
-    # Map over the tokens to calculate the sum of digits for each element
-    sum_digits = rasp.Map(lambda x: (x // 10) + (x % 10), rasp.tokens).named("sum_digits")
-    
-    return sum_digits[0m
-2024-04-04 14:00:25,551 - INFO - the function runs correctly.[0, 3, 4, 1, -5, 4]-->[0, 3, 4, 1, 4, 4]
-2024-04-04 14:00:25,551 - INFO - 
-Ground truth function:
-2024-04-04 14:00:25,552 - INFO - [38;2;0;150;200mdef fun(sequence):
-    a = [[int(j) for j in str(i)] for i in sequence]
-    return [sum(i) for i in a][0m
-2024-04-04 14:00:25,552 - INFO - TESTS:
-2024-04-04 14:00:25,552 - INFO - Testing against ground truth:
-2024-04-04 14:00:25,556 - INFO - the rasp program is ground truth equivalent
-2024-04-04 14:00:25,556 - INFO - Testing with tracr validator:
-2024-04-04 14:00:25,565 - INFO - number of issues found by the validator:0
-2024-04-04 14:00:25,565 - INFO - Testing compileability:
-2024-04-04 14:00:25,589 - INFO - Unable to initialize backend 'cuda': 
-2024-04-04 14:00:25,589 - INFO - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-2024-04-04 14:00:25,594 - INFO - Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: dlopen(libtpu.so, 0x0001): tried: 'libtpu.so' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibtpu.so' (no such file), '/usr/lib/libtpu.so' (no such file, not in dyld cache), 'libtpu.so' (no such file), '/usr/lib/libtpu.so' (no such file, not in dyld cache)
-2024-04-04 14:00:26,747 - INFO - the model compiled correctly
-2024-04-04 14:00:26,747 - INFO - testing correctnes of the tracr transformer weights:
-2024-04-04 14:00:37,034 - INFO - weights are equivalent to the rasp function
-2024-04-04 14:00:37,035 - INFO - [38;2;0;255;0mTesting complete
-Generated correct function after 1 tries[0m
-2024-04-04 14:00:37,035 - INFO - 
-SUCCESSRATE:1/1
+2024-04-15 17:59:49,205 - INFO - Function Name: make_sum_digits
+2024-04-15 17:59:49,205 - INFO - Modifying prompt
+2024-04-15 17:59:49,206 - INFO - Attempt 1
+2024-04-15 17:59:49,206 - INFO - Generating RASP code
+2024-04-15 17:59:50,237 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:50,237 - INFO - Attempt 2
+2024-04-15 17:59:50,237 - INFO - Generating RASP code
+2024-04-15 17:59:50,633 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:50,634 - INFO - Attempt 3
+2024-04-15 17:59:50,634 - INFO - Generating RASP code
+2024-04-15 17:59:51,305 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:51,305 - INFO - Attempt 4
+2024-04-15 17:59:51,305 - INFO - Generating RASP code
+2024-04-15 17:59:51,817 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:51,817 - INFO - Attempt 5
+2024-04-15 17:59:51,817 - INFO - Generating RASP code
+2024-04-15 17:59:52,329 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:52,330 - INFO - failed to generate make_sum_digits
+2024-04-15 17:59:52,330 - INFO - 
+SUCCESSRATE:0/1
 
-2024-04-04 14:00:37,035 - INFO - 
+2024-04-15 17:59:52,330 - INFO - 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-2024-04-04 14:00:37,035 - INFO - 
+2024-04-15 17:59:52,330 - INFO - 
 Task: Make a RASP program that takes the absolute value of each element in the sequence. Example: [-1, 2, -3] --> [1, 2, 3]
-2024-04-04 14:00:37,035 - INFO - Function Name: make_absolute
-2024-04-04 14:00:37,035 - INFO - Modifying prompt
-2024-04-04 14:00:37,037 - INFO - Attempt 1
-2024-04-04 14:00:37,037 - INFO - Generating RASP code
-2024-04-04 14:00:47,286 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-04-04 14:00:47,289 - INFO - GENERATED CODE:
-2024-04-04 14:00:47,289 - INFO - [38;2;0;150;200m# Create the RASP function for calculating absolute values
-def make_absolute() -> rasp.SOp:
-    # Create a selector to check if each element is negative
-    negative_selector = rasp.Select(rasp.tokens, rasp.indices, rasp.Comparison.LT).named("negative_selector")
+2024-04-15 17:59:52,330 - INFO - Function Name: make_absolute
+2024-04-15 17:59:52,330 - INFO - Modifying prompt
+2024-04-15 17:59:52,331 - INFO - Attempt 1
+2024-04-15 17:59:52,331 - INFO - Generating RASP code
+2024-04-15 17:59:52,848 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:52,848 - INFO - Attempt 2
+2024-04-15 17:59:52,848 - INFO - Generating RASP code
+2024-04-15 17:59:53,372 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:53,372 - INFO - Attempt 3
+2024-04-15 17:59:53,372 - INFO - Generating RASP code
+2024-04-15 17:59:53,896 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:53,897 - INFO - Attempt 4
+2024-04-15 17:59:53,897 - INFO - Generating RASP code
+2024-04-15 17:59:54,480 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:54,480 - INFO - Attempt 5
+2024-04-15 17:59:54,480 - INFO - Generating RASP code
+2024-04-15 17:59:54,993 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:54,993 - INFO - failed to generate make_absolute
+2024-04-15 17:59:54,993 - INFO - 
+SUCCESSRATE:0/2
 
-    # Use a Map to multiply negative elements by -1 to get their absolute values
-    absolute_values = rasp.SequenceMap(lambda x, y: -x if y else x, rasp.tokens, negative_selector).named("absolute_values")
-
-    # Combine the absolute values with the original positive values based on negativity
-    result = rasp.Aggregate(negative_selector, absolute_values).named("result")
-
-    return result[0m
-2024-04-04 14:00:47,289 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
-Error: [0m
-2024-04-04 14:00:47,289 - INFO - Attempt 2
-2024-04-04 14:00:47,289 - INFO - Generating RASP code
+2024-04-15 17:59:54,993 - INFO - 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2024-04-15 17:59:54,993 - INFO - 
+Task: Make a RASP program that returns the first element of the sequence. Example: [1, 2, 3] --> [1, 1, 1]
+2024-04-15 17:59:54,993 - INFO - Function Name: make_first_element
+2024-04-15 17:59:54,993 - INFO - Modifying prompt
+2024-04-15 17:59:54,994 - INFO - Attempt 1
+2024-04-15 17:59:54,994 - INFO - Generating RASP code
+2024-04-15 17:59:55,469 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:55,470 - INFO - Attempt 2
+2024-04-15 17:59:55,470 - INFO - Generating RASP code
+2024-04-15 17:59:55,995 - INFO - [38;2;255;0;0mFailed at stage 0 (defining op)
+Error: 400 User location is not supported for the API use.[0m
+2024-04-15 17:59:55,995 - INFO - Attempt 3
+2024-04-15 17:59:55,995 - INFO - Generating RASP code

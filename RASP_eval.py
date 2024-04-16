@@ -155,22 +155,24 @@ def check_op_with_ground_truth(op: rasp.SOp, function, tests: Optional[List[Any]
             rand_arr = [np.random.randint(10) for _ in range((np.random.randint(5) + 1) * 2)]
             rasp_result = op(rand_arr)
             ground_truth = ground_truth_function(rand_arr)
-            if isinstance(ground_truth, float) or isinstance(ground_truth, int):
-                if not math.isclose(rasp_result[0], ground_truth, abs_tol=1e-10):
-                    if verbose:
-                        logging.info(f"array: {rand_arr} rasp_result: {rasp_result} ground_truth: {ground_truth}")
-            else:
-                if not (len(rasp_result) == len(ground_truth) and all(math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
-                    all_correct = False
-                    n_errors += 1
+            if ground_truth != rasp_result:
+                if isinstance(ground_truth, float) or isinstance(ground_truth, int):
+                    if not math.isclose(rasp_result[0], ground_truth, abs_tol=1e-10):
+                        if verbose:
+                            logging.info(f"array: {rand_arr} rasp_result: {rasp_result} ground_truth: {ground_truth}")
+                else:
+                    if not (len(rasp_result) == len(ground_truth) and all(math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
+                        all_correct = False
+                        n_errors += 1
     else:
         for test in tests:
             rand_arr = test["input"]
             ground_truth = test["output"]
             rasp_result = op(rand_arr)
-            if not (len(rasp_result) == len(ground_truth) and all(a == b if a is None or b is None else math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
-                all_correct = False
-                n_errors += 1
+            if ground_truth != rasp_result:
+                if not (len(rasp_result) == len(ground_truth) and all(a == b if a is None or b is None else math.isclose(a, b, rel_tol=1e-5, abs_tol=1e-5) for a, b in zip(rasp_result, ground_truth))):
+                    all_correct = False
+                    n_errors += 1
     if all_correct:
         if verbose:
             logging.info("the rasp program is ground truth equivalent")
