@@ -2,10 +2,8 @@ import os
 import time
 
 from openai import OpenAI
-import json
 from RASP_eval import evaluate_model, visualize_results
 from abstract_model import Model
-from typing import Optional
 import backoff
 import tiktoken
 from tracr.rasp import rasp
@@ -15,7 +13,7 @@ from openai._exceptions import (
 )
 import anthropic
 import google.generativeai as genai
-from replicate.client import Client
+
 
 class OpenAIChatModel(Model):
     def __init__(self, model_name: str):
@@ -123,8 +121,8 @@ class GeminiChatModel:
 
 
 #model = OpenAIChatModel("gpt-4-turbo-2024-04-09")
-model = OpenAIChatModel("gpt-3.5-turbo-0125")
-#model = AnthropicChatModel("claude-3-haiku-20240307")
+#model = OpenAIChatModel("gpt-3.5-turbo-0125")
+model = AnthropicChatModel("claude-3-haiku-20240307")
 #model = GeminiChatModel("models/gemini-pro")
 results = evaluate_model(model)
 visualize_results(results)

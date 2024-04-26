@@ -412,8 +412,9 @@ def evaluate_model(model, verbose: bool = True):
     suc, n_attempted_generations = 0, 0
     successes = {}
     failures = {}
+    results = {"successes": successes, "failures": failures}
     promt_file = "prompts/prompt_full.txt"
-    for key in  tqdm(data.keys(), desc="Evaluating Tasks"):
+    for key in  tqdm(list(data.keys())[34:], desc="Evaluating Tasks"):
         task_successes, task_failures = process_task(model, data[key], promt_file, verbose=verbose)
         n_attempted_generations += 1
         if len(task_successes) > 0:
@@ -422,9 +423,9 @@ def evaluate_model(model, verbose: bool = True):
         failures[key] = task_failures
         if verbose:
             logging.info("\nSUCCESSRATE:" + str(suc) + "/"+str(n_attempted_generations)+ "\n")
-    results = {"successes": successes, "failures": failures}
-    with open(f'evaluation_results_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json', 'w') as f:
-        json.dump(results, f, indent=4)
+        results = {"successes": successes, "failures": failures}
+        with open(f'evaluation_results_{model.model_name}_{datetime.now().strftime("%Y%m%d")}.json', 'w') as f:
+            json.dump(results, f, indent=4)
     return results
 
 
