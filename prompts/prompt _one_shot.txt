@@ -1,10 +1,10 @@
-# Introduction to Task:
+ # Introduction to Task:
 Your assignment is to generate RASP programs capable of implementing a variety of algorithms using sequence operations. "RASP" stands for "Restricted Access Sequence Processing Language". RASP allows you to articulate complex sequence to sequence in a format equivalent to what a neural network of the transformer architecture can do. RASP programs always output a sequence that has the same length as the input sequence.
 
 # Your Task
-Make a RASP program that takes the absolute value of each element in the sequence.
-Example: [-1, 2, -3] --> [1, 2, 3]
-Name the function that you can call to make this program 'make_absolute()'
+Make a RASP program that replaces each element with the parity (0 for even, 1 for odd) of its index.
+Example: [5, 5, 5, 5] --> [0, 1, 0, 1]
+Name the function that you can call to make this program 'make_index_parity()'
 
 Keep your task in mind while reading the following information.
 
@@ -121,298 +121,298 @@ To make you better understand the RASP language you can look at the following co
 """RASP program objects.
 
 class Map(SOp):
-  """SOp that evaluates the function element-wise on the input SOp.
+  """SOp that evaluates the function element-wise on the input SOp.
 
-  Map(lambda x: x + 1, tokens).eval([1, 2, 3]) == [2, 3, 4]
-  """
+  Map(lambda x: x + 1, tokens).eval([1, 2, 3]) == [2, 3, 4]
+  """
 
-  def __init__(
-      self,
-      f: Callable[[Value], Value],
-      inner: SOp,
-      simplify: bool = True,
-  ):
-    """Initialises.
+  def __init__(
+      self,
+      f: Callable[[Value], Value],
+      inner: SOp,
+      simplify: bool = True,
+  ):
+    """Initialises.
 
-    Args:
-      f: the function to apply element-wise.
-      inner: the SOp to which to apply `f`.
-      simplify: if True and if `inner` is also a Map, will combine the new map
-        and `inner` into a single Map object.
-    """
-    super().__init__()
-    self.f = f
-    self.inner = inner
+    Args:
+      f: the function to apply element-wise.
+      inner: the SOp to which to apply `f`.
+      simplify: if True and if `inner` is also a Map, will combine the new map
+        and `inner` into a single Map object.
+    """
+    super().__init__()
+    self.f = f
+    self.inner = inner
 
-    assert isinstance(self.inner, SOp)
-    assert callable(self.f) and not isinstance(self.f, RASPExpr)
+    assert isinstance(self.inner, SOp)
+    assert callable(self.f) and not isinstance(self.f, RASPExpr)
 
-    if simplify and isinstance(self.inner, Map):
-      # combine the functions into just one.
-      inner_f = self.inner.f
-      self.f = lambda t: f(inner_f(t))
-      self.inner = self.inner.inner
+    if simplify and isinstance(self.inner, Map):
+      # combine the functions into just one.
+      inner_f = self.inner.f
+      self.f = lambda t: f(inner_f(t))
+      self.inner = self.inner.inner
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.inner]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.inner]
 
 
 class SequenceMap(SOp):
-  """SOp that evaluates the function element-wise on the two given SOp's.
+  """SOp that evaluates the function element-wise on the two given SOp's.
 
-  SequenceMap(lambda x, y: x - y, length, tokens).eval([1, 2, 3]) == [2, 1, 0]
-  """
+  SequenceMap(lambda x, y: x - y, length, tokens).eval([1, 2, 3]) == [2, 1, 0]
+  """
 
-  def __init__(
-      self,
-      f: Callable[[Value, Value], Value],
-      fst: SOp,
-      snd: SOp,
-  ):
-    super().__init__()
+  def __init__(
+      self,
+      f: Callable[[Value, Value], Value],
+      fst: SOp,
+      snd: SOp,
+  ):
+    super().__init__()
 
-    if fst == snd:
-      logging.warning("Creating a SequenceMap with both inputs being the same "
-                      "SOp is discouraged. You should use a Map instead.")
+    if fst == snd:
+      logging.warning("Creating a SequenceMap with both inputs being the same "
+                      "SOp is discouraged. You should use a Map instead.")
 
-    self.f = f
-    self.fst = fst
-    self.snd = snd
-    assert isinstance(self.fst, SOp)
-    assert isinstance(self.snd, SOp)
-    assert callable(self.f) and not isinstance(self.f, RASPExpr)
+    self.f = f
+    self.fst = fst
+    self.snd = snd
+    assert isinstance(self.fst, SOp)
+    assert isinstance(self.snd, SOp)
+    assert callable(self.f) and not isinstance(self.f, RASPExpr)
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.fst, self.snd]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.fst, self.snd]
 
 
 class LinearSequenceMap(SequenceMap):
-  """SOp that evaluates a linear function element-wise on the two given SOp's."""
+  """SOp that evaluates a linear function element-wise on the two given SOp's."""
 
-  def __init__(self, fst: SOp, snd: SOp, fst_fac: float, snd_fac: float):
-    super().__init__(fst=fst, snd=snd, f=lambda x, y: fst_fac * x + snd_fac * y)
-    self.fst_fac = fst_fac
-    self.snd_fac = snd_fac
+  def __init__(self, fst: SOp, snd: SOp, fst_fac: float, snd_fac: float):
+    super().__init__(fst=fst, snd=snd, f=lambda x, y: fst_fac * x + snd_fac * y)
+    self.fst_fac = fst_fac
+    self.snd_fac = snd_fac
 
 
 ### Selectors.
 
 class Comparison(enum.Enum):
-  """A two-place boolean comparison predicate for use in Select."""
-  EQ = "=="
-  LT = "<"
-  LEQ = "<="
-  GT = ">"
-  GEQ = ">="
-  NEQ = "!="
-  TRUE = "True"
-  FALSE = "False"
+  """A two-place boolean comparison predicate for use in Select."""
+  EQ = "=="
+  LT = "<"
+  LEQ = "<="
+  GT = ">"
+  GEQ = ">="
+  NEQ = "!="
+  TRUE = "True"
+  FALSE = "False"
 
-  def __call__(self, key: Value, query: Value) -> bool:
-    if key is None:
-      raise ValueError("key is None!")
-    if query is None:
-      raise ValueError("query is None!")
-    return _comparison_table[self](key, query)
+  def __call__(self, key: Value, query: Value) -> bool:
+    if key is None:
+      raise ValueError("key is None!")
+    if query is None:
+      raise ValueError("query is None!")
+    return _comparison_table[self](key, query)
 
 
 _comparison_table = {
-    Comparison.EQ: lambda key, query: key == query,
-    Comparison.LT: lambda key, query: key < query,
-    Comparison.LEQ: lambda key, query: key <= query,
-    Comparison.GT: lambda key, query: key > query,
-    Comparison.GEQ: lambda key, query: key >= query,
-    Comparison.NEQ: lambda key, query: key != query,
-    Comparison.TRUE: lambda key, query: True,
-    Comparison.FALSE: lambda key, query: False,
+    Comparison.EQ: lambda key, query: key == query,
+    Comparison.LT: lambda key, query: key < query,
+    Comparison.LEQ: lambda key, query: key <= query,
+    Comparison.GT: lambda key, query: key > query,
+    Comparison.GEQ: lambda key, query: key >= query,
+    Comparison.NEQ: lambda key, query: key != query,
+    Comparison.TRUE: lambda key, query: True,
+    Comparison.FALSE: lambda key, query: False,
 }
 
 
 class Selector(RASPExpr):
-  """RASP Selector. Represents something like an attention head's weights."""
+  """RASP Selector. Represents something like an attention head's weights."""
 
-  def __call__(self, xs: Sequence[Value]) -> SelectorValue:
-    return evaluate(self, xs) # pytype: disable=bad-return-type
+  def __call__(self, xs: Sequence[Value]) -> SelectorValue:
+    return evaluate(self, xs) # pytype: disable=bad-return-type
 
-  # allow construction of Selector combinations using Python logical operators.
-  def __and__(self, other: "Selector") -> "Selector":
-    """self & other."""
-    return selector_and(self, other)
+  # allow construction of Selector combinations using Python logical operators.
+  def __and__(self, other: "Selector") -> "Selector":
+    """self & other."""
+    return selector_and(self, other)
 
-  def __rand__(self, other: "Selector") -> "Selector":
-    """other & self."""
-    return selector_and(other, self)
+  def __rand__(self, other: "Selector") -> "Selector":
+    """other & self."""
+    return selector_and(other, self)
 
-  def __or__(self, other: "Selector") -> "Selector":
-    """self | other."""
-    return selector_or(self, other)
+  def __or__(self, other: "Selector") -> "Selector":
+    """self | other."""
+    return selector_or(self, other)
 
-  def __ror__(self, other: "Selector") -> "Selector":
-    """other | self."""
-    return selector_or(other, self)
+  def __ror__(self, other: "Selector") -> "Selector":
+    """other | self."""
+    return selector_or(other, self)
 
-  def __invert__(self) -> "Selector":
-    """~self."""
-    return selector_not(self)
+  def __invert__(self) -> "Selector":
+    """~self."""
+    return selector_not(self)
 
 
 class Select(Selector):
-  """Primitive that creates a Selector."""
+  """Primitive that creates a Selector."""
 
-  def __init__(self, keys: SOp, queries: SOp, predicate: Predicate):
-    super().__init__()
-    self.keys = keys
-    self.queries = queries
-    self.predicate = predicate
-    assert isinstance(self.keys, SOp)
-    assert isinstance(self.queries, SOp)
+  def __init__(self, keys: SOp, queries: SOp, predicate: Predicate):
+    super().__init__()
+    self.keys = keys
+    self.queries = queries
+    self.predicate = predicate
+    assert isinstance(self.keys, SOp)
+    assert isinstance(self.queries, SOp)
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.keys, self.queries]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.keys, self.queries]
 
 
 class ConstantSelector(Selector):
-  """A constant selector for testing purposes."""
+  """A constant selector for testing purposes."""
 
-  def __init__(self, value: SelectorValue, check_length: bool = True):
-    super().__init__()
-    self.value = value
-    self.check_length = check_length
+  def __init__(self, value: SelectorValue, check_length: bool = True):
+    super().__init__()
+    self.value = value
+    self.check_length = check_length
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return []
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return []
 
 
 class SelectorWidth(SOp):
-  """SelectorWidth primitive."""
+  """SelectorWidth primitive."""
 
-  def __init__(self, selector: Selector):
-    super().__init__()
-    self.selector = selector
-    assert isinstance(self.selector, Selector)
+  def __init__(self, selector: Selector):
+    super().__init__()
+    self.selector = selector
+    assert isinstance(self.selector, Selector)
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.selector]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.selector]
 
 
 class SelectorAnd(Selector):
-  """Implements elementwise `and` between selectors."""
+  """Implements elementwise `and` between selectors."""
 
-  def __init__(self, fst: Selector, snd: Selector):
-    super().__init__()
-    self.fst = fst
-    self.snd = snd
-    assert isinstance(self.fst, Selector)
-    assert isinstance(self.snd, Selector)
+  def __init__(self, fst: Selector, snd: Selector):
+    super().__init__()
+    self.fst = fst
+    self.snd = snd
+    assert isinstance(self.fst, Selector)
+    assert isinstance(self.snd, Selector)
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.fst, self.snd]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.fst, self.snd]
 
 
 class SelectorOr(Selector):
-  """Implements elementwise `or` between selectors."""
+  """Implements elementwise `or` between selectors."""
 
-  def __init__(self, fst: Selector, snd: Selector):
-    super().__init__()
-    self.fst = fst
-    self.snd = snd
-    assert isinstance(self.fst, Selector)
-    assert isinstance(self.snd, Selector)
+  def __init__(self, fst: Selector, snd: Selector):
+    super().__init__()
+    self.fst = fst
+    self.snd = snd
+    assert isinstance(self.fst, Selector)
+    assert isinstance(self.snd, Selector)
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.fst, self.snd]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.fst, self.snd]
 
 
 class SelectorNot(Selector):
-  """Implements elementwise `not` on a selector."""
+  """Implements elementwise `not` on a selector."""
 
-  def __init__(self, inner: Selector):
-    self.inner = inner
-    super().__init__()
-    assert isinstance(self.inner, Selector)
+  def __init__(self, inner: Selector):
+    self.inner = inner
+    super().__init__()
+    assert isinstance(self.inner, Selector)
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.inner]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.inner]
 
 
 def selector_not(
-    inner: Selector,
-    simplify: bool = True,
+    inner: Selector,
+    simplify: bool = True,
 ) -> Selector:
-  """Returns a SelectorNot, or a Select if simplifying is possible."""
-  if simplify and isinstance(inner, Select):
-    predicate = lambda k, q: not inner.predicate(k, q)
-    return Select(inner.keys, inner.queries, predicate=predicate)
+  """Returns a SelectorNot, or a Select if simplifying is possible."""
+  if simplify and isinstance(inner, Select):
+    predicate = lambda k, q: not inner.predicate(k, q)
+    return Select(inner.keys, inner.queries, predicate=predicate)
 
-  return SelectorNot(inner)
+  return SelectorNot(inner)
 
 
 def selector_and(
-    fst: Selector,
-    snd: Selector,
-    simplify: bool = True,
+    fst: Selector,
+    snd: Selector,
+    simplify: bool = True,
 ) -> Selector:
-  """Returns a SelectorAnd, or a Select if simplifying is possible."""
-  if simplify and isinstance(fst, Select) and isinstance(snd, Select):
-    simplified = _attempt_simplify(fst, snd, lambda l, r: l and r)
-    if simplified:
-      return simplified
+  """Returns a SelectorAnd, or a Select if simplifying is possible."""
+  if simplify and isinstance(fst, Select) and isinstance(snd, Select):
+    simplified = _attempt_simplify(fst, snd, lambda l, r: l and r)
+    if simplified:
+      return simplified
 
-  return SelectorAnd(fst, snd)
+  return SelectorAnd(fst, snd)
 
 
 def selector_or(
-    fst: Selector,
-    snd: Selector,
-    simplify: bool = True,
+    fst: Selector,
+    snd: Selector,
+    simplify: bool = True,
 ) -> Selector:
-  """Returns a SelectorOr, or a Select if simplifying is possible."""
-  if simplify and isinstance(fst, Select) and isinstance(snd, Select):
-    simplified = _attempt_simplify(fst, snd, lambda l, r: l or r)
-    if simplified:
-      return simplified
+  """Returns a SelectorOr, or a Select if simplifying is possible."""
+  if simplify and isinstance(fst, Select) and isinstance(snd, Select):
+    simplified = _attempt_simplify(fst, snd, lambda l, r: l or r)
+    if simplified:
+      return simplified
 
-  return SelectorOr(fst, snd)
+  return SelectorOr(fst, snd)
 
 
 class Aggregate(SOp, Generic[VT]):
-  """Aggregate primitive."""
+  """Aggregate primitive."""
 
-  def __init__(self,
-               selector: Selector,
-               sop: SOp,
-               default: Optional[VT] = None):
-    """Initialises. The default is used where nothing is selected."""
-    super().__init__()
-    self.selector = selector
-    self.sop = sop
-    self.default = default
-    assert isinstance(self.selector, Selector)
-    assert isinstance(self.sop, SOp)
-    assert (self.default is None or isinstance(self.default,
-                                               (str, float, bool, int)))
+  def __init__(self,
+               selector: Selector,
+               sop: SOp,
+               default: Optional[VT] = None):
+    """Initialises. The default is used where nothing is selected."""
+    super().__init__()
+    self.selector = selector
+    self.sop = sop
+    self.default = default
+    assert isinstance(self.selector, Selector)
+    assert isinstance(self.sop, SOp)
+    assert (self.default is None or isinstance(self.default,
+                                               (str, float, bool, int)))
 
-  @property
-  def children(self) -> Sequence[RASPExpr]:
-    return [self.selector, self.sop]
+  @property
+  def children(self) -> Sequence[RASPExpr]:
+    return [self.selector, self.sop]
 
 ```
 
 # Example use of Functions:
-This is an example use the rasp.Select function. Here, it produces a selector based on rasp.tokens applied to itself with the "Greater Than" or GT comparison operator:
+This is an example use the rasp.Select function. Here, it produces a selector based on rasp.tokens applied to itself with the "Greater Than" or GT comparison operator:
 
 ```python
 greater_than_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.GT).named("greater_than_selector")
 ```
-If the rasp.tokens-sequence is [1, 2, 3, 4] the selector will look like this:
+If the rasp.tokens-sequence is [1, 2, 3, 4] the selector will look like this:
 [False, True, True, True]
 [False, False, True, True]
 [False, False, False, True]
@@ -429,7 +429,7 @@ We will get an average of all the values selected in each row. The output looks 
 4, # as an average of the selected 4
 None # because none of the values were selected as none of them are greater than 4 at this position. So, None, which is always the default value, takes this spot.
 ]
-Note that, in the programs you create, you should avoid using rasp.Aggregate with selectors that have more than one true value in each row. In other words: you can use rasp.Aggregate to shift elements around, but avoid using it for averaging multiple elements. However, using rasp.SelectWidth with selectors that have more than one "True" value per row is completely fine.
+Note that, in the programs you create, you should avoid using rasp.Aggregate with selectors that have more than one true value in each row. In other words: you can use rasp.Aggregate to shift elements around, but avoid using it for averaging multiple elements. However, using rasp.SelectWidth with selectors that have more than one "True" value per row is completely fine.
 If we now call:
 ```python
 count_GT_selector = rasp.SelectorWidth(greater_than_selector)
@@ -519,29 +519,29 @@ There are no changes needed for the plan based on verification.
 
 ```python
 def make_max() -> rasp.SOp:
-    # Selector that creates a comparison matrix where each element is compared to every other element.
-    leq_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.LEQ).named("leq_selector")
+    # Selector that creates a comparison matrix where each element is compared to every other element.
+    leq_selector = rasp.Select(rasp.tokens, rasp.tokens, rasp.Comparison.LEQ).named("leq_selector")
 
-    # Count the number of comparisons where each element is less than or equal to other elements.
-    leq_count = rasp.SelectorWidth(leq_selector).named("leq_count")
+    # Count the number of comparisons where each element is less than or equal to other elements.
+    leq_count = rasp.SelectorWidth(leq_selector).named("leq_count")
 
-    # Create a Map to get the sequence length for each element.
-    sequence_length = rasp.Map(lambda x: len(x), rasp.tokens).named("sequence_length")
+    # Create a Map to get the sequence length for each element.
+    sequence_length = rasp.Map(lambda x: len(x), rasp.tokens).named("sequence_length")
 
-    # Selector that selects the element where the leq_count equals the sequence_length.
-    max_element_selector = rasp.Select(leq_count, sequence_length, rasp.Comparison.EQ).named("max_element_selector")
+    # Selector that selects the element where the leq_count equals the sequence_length.
+    max_element_selector = rasp.Select(leq_count, sequence_length, rasp.Comparison.EQ).named("max_element_selector")
 
-    # Use Aggregate to broadcast the maximum element across the entire sequence.
-    max_sequence = rasp.Aggregate(max_element_selector, rasp.tokens).named("max_sequence")
+    # Use Aggregate to broadcast the maximum element across the entire sequence.
+    max_sequence = rasp.Aggregate(max_element_selector, rasp.tokens).named("max_sequence")
 
-    return max_sequence
+    return max_sequence
 ```
 
 
 # Your Task
-Make a RASP program that takes the absolute value of each element in the sequence.
-Example: [-1, 2, -3] --> [1, 2, 3]
-Name the function that you can call to make this program 'make_absolute()'
+Make a RASP program that replaces each element with the parity (0 for even, 1 for odd) of its index.
+Example: [5, 5, 5, 5] --> [0, 1, 0, 1]
+Name the function that you can call to make this program 'make_index_parity()'
 
 
 Examples provided are references; use them to grasp the syntax and structure required for RASP. From there, your original programs should follow these established patterns but are not limited to the examples' specific functions.
