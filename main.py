@@ -452,7 +452,7 @@ def evaluate_model(model, verbose: bool = True):
     results = {"successes": successes, "failures": failures}
     promt_file = "prompts/prompt_full_claude.txt"
     with open(f'evaluation_results_{model.model_name}_{datetime.now().strftime("%Y%m%d")}.json', 'w') as f:
-        for key in  tqdm(list(data.keys())[92:], desc="Evaluating Tasks"):
+        for key in  tqdm(list(data.keys()), desc="Evaluating Tasks"):
             task_successes, task_failures = process_task(model, data[key], promt_file, verbose=verbose)
             n_attempted_generations += 1
             if len(task_successes) > 0:
