@@ -1,5 +1,5 @@
 import sys
-from concurrent.futures import ThreadPoolExecutor, TimeoutError
+from concurrent.futures import TimeoutError
 import numpy as np
 import math
 import re
@@ -17,9 +17,9 @@ import logging
 from tqdm import tqdm
 from typing import Optional, List, Any
 from tracr.compiler.assemble import AssembledTransformerModel
-from GeminiChatModel import GeminiChatModel
-from AnthropicChatModel import AnthropicChatModel
-from OpenAIChatModel import OpenAIChatModel
+from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.GeminiChatModel import GeminiChatModel
+from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.AnthropicChatModel import AnthropicChatModel
+from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.OpenAIChatModel import OpenAIChatModel
 import resource
 
 soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_NOFILE)
@@ -450,7 +450,7 @@ def evaluate_model(model, verbose: bool = True):
     successes = {}
     failures = {}
     results = {"successes": successes, "failures": failures}
-    promt_file = "prompts/prompt_full_claude.txt"
+    promt_file = "prompts/prompt_full.txt"
     with open(f'evaluation_results_{model.model_name}_{datetime.now().strftime("%Y%m%d")}.json', 'w') as f:
         for key in  tqdm(list(data.keys()), desc="Evaluating Tasks"):
             task_successes, task_failures = process_task(model, data[key], promt_file, verbose=verbose)

@@ -1,3 +1,0 @@
-class make_sum_digits:
-    def call(self):
-        return rasp.Map(lambda x: sum([int(i) for i in str(x)]), rasp.tokens)

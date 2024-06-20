@@ -1,5 +1,5 @@
 import time
-from abstract_model import Model
+from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.abstract_model import Model
 import anthropic
 
 class AnthropicChatModel(Model):
