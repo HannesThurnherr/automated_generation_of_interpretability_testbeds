@@ -34,7 +34,8 @@ class OpenAIChatModel(Model):
 you can then import the methods evaluate_model() and visualize_results() from RASP_eval
 
 ```python
-from RASP_eval import evaluate_model, visualize_results
+from models.OpenAIChatModel import OpenAIChatModel
+from main import evaluate_model, visualize_results
 
 model = OpenAIChatModel("gpt-3.5-turbo-0125")
 results = evaluate_model(model)
