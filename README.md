@@ -1,6 +1,6 @@
-### Installing RASP_eval
+### Installing Tracrbench
 
-To use RASP_eval you will need to install the tracr library (https://github.com/google-deepmind/tracr) with the following commands
+To use Tracrbench you will need to install the tracr library (https://github.com/google-deepmind/tracr) with the following commands
 
 ```
 git clone https://github.com/deepmind/tracr
@@ -15,9 +15,9 @@ git clone https://github.com/HannesThurnherr/automated_generation_of_interpretab
 cd automated_generation_of_interpretability_testbeds
 pip install -r requirements.txt
 ```
-### Using RASP_eval
+### Using Tracrbench
 
-To use RASP_eval you must define a model class with a generate method. To do this you can let your class inherit from the abstract model class in the model.py file.
+To use Tracrbench you must define a model class with a generate method. To do this you can let your class inherit from the abstract model class in the model.py file.
 
 For example:
 ```python
@@ -31,7 +31,7 @@ class OpenAIChatModel(Model):
         #rest of the method
 ```
 
-you can then import the methods evaluate_model() and visualize_results() from RASP_eval
+you can then import the methods evaluate_model() and visualize_results() from main.py
 
 ```python
 from models.OpenAIChatModel import OpenAIChatModel
