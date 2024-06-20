@@ -1,9 +1,5 @@
-from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.OpenAIChatModel import OpenAIChatModel
+from models.OpenAIChatModel import OpenAIChatModel
 from main import evaluate_model, visualize_results
-
-
-
-
 
 
 model = OpenAIChatModel("gpt-4-turbo-2024-04-09")
