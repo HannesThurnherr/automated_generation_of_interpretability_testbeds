@@ -1,5 +1,5 @@
 import google.generativeai as genai
-from abstract_model import Model
+from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.abstract_model import Model
 
 
 class GeminiChatModel(Model):

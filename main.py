@@ -17,9 +17,9 @@ import logging
 from tqdm import tqdm
 from typing import Optional, List, Any
 from tracr.compiler.assemble import AssembledTransformerModel
-from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.GeminiChatModel import GeminiChatModel
-from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.AnthropicChatModel import AnthropicChatModel
-from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.models.OpenAIChatModel import OpenAIChatModel
+from models.GeminiChatModel import GeminiChatModel
+from models.AnthropicChatModel import AnthropicChatModel
+from models.OpenAIChatModel import OpenAIChatModel
 import resource
 
 soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_NOFILE)
@@ -391,7 +391,7 @@ def process_task(model: AssembledTransformerModel, task_data: dict, promt_file: 
             with open(promt_file) as f:
                 prompt = f.read()
 
-            output = model.generate(prompt, system_prompt, "", temperature = 0.9, top_p = 0.95)
+            output = model.generate(prompt, system_prompt, "")#, temperature = 0.9, top_p = 0.95)
             if verbose: logging.info("GENERATED CODE:")
             generated_rasp_code = extract_python_code(output)
             if verbose: logging.info(colored(0, 150, 200, generated_rasp_code))
@@ -450,7 +450,7 @@ def evaluate_model(model, verbose: bool = True):
     successes = {}
     failures = {}
     results = {"successes": successes, "failures": failures}
-    promt_file = "prompts/prompt_full.txt"
+    promt_file = "prompts/prompt _one_shot.txt"
     with open(f'evaluation_results_{model.model_name}_{datetime.now().strftime("%Y%m%d")}.json', 'w') as f:
         for key in  tqdm(list(data.keys()), desc="Evaluating Tasks"):
             task_successes, task_failures = process_task(model, data[key], promt_file, verbose=verbose)

@@ -1,6 +1,6 @@
 import os
 from openai import OpenAI
-from abstract_model import Model
+from appollo_research_project.repo.automated_generation_of_interpretability_testbeds.abstract_model import Model
 import backoff
 import tiktoken
 from openai._exceptions import (

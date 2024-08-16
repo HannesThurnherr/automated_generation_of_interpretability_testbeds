@@ -3,9 +3,9 @@
 Your assignment is to generate RASP programs capable of implementing a variety of algorithms using sequence operations. "RASP" stands for "Restricted Access Sequence Processing Language". RASP allows you to articulate complex sequence to sequence in a format equivalent to what a neural network of the transformer architecture can do. RASP programs always output a sequence that has the same length as the input sequence.
 
 # Your Task
-Make a RASP program that replaces each element with the sum of its digits.
-Example: [12, 34, 56] --> [3, 7, 11]
-Name the function that you can call to make this program 'make_sum_digits()'
+Make a RASP program that replaces each element with the parity (0 for even, 1 for odd) of its index.
+Example: [5, 5, 5, 5] --> [0, 1, 0, 1]
+Name the function that you can call to make this program 'make_index_parity()'
 
 Keep your task in mind while reading the following information.
 </introduction>
@@ -1050,9 +1050,9 @@ def make_max() -> rasp.SOp:
 
 <your_task>
 # Your Task
-Make a RASP program that replaces each element with the sum of its digits.
-Example: [12, 34, 56] --> [3, 7, 11]
-Name the function that you can call to make this program 'make_sum_digits()'
+Make a RASP program that replaces each element with the parity (0 for even, 1 for odd) of its index.
+Example: [5, 5, 5, 5] --> [0, 1, 0, 1]
+Name the function that you can call to make this program 'make_index_parity()'
 
 <guidelines>
 
