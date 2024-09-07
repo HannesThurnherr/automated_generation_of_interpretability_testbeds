@@ -10,8 +10,9 @@ from tracr.compiler import compiling
 import sys
 from tracr.compiler.assemble import AssembledTransformerModel
 from tracr.transformer import encoder
+from huggingface_hub import hf_hub_download
 
-class tracr_model(torch.nn.Module):
+class TracrModel(torch.nn.Module):
     def __init__(self, input_encoder, output_encoder, tl_model, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.tl_model = tl_model
@@ -140,6 +141,19 @@ def load_tracr_model(path):
     tl_model = torch.load(path+"/tl_model.pt")
     with open(path+"/input&output_encoder.pkl", "rb") as f:
         in_out_encoder = pickle.load(f)
-    return tracr_model(in_out_encoder["input_encoder"], in_out_encoder["output_encoder"], tl_model)
+    return TracrModel(in_out_encoder["input_encoder"], in_out_encoder["output_encoder"], tl_model)
 
 
+def load_model_from_hf(model_name):
+    # Download the model file
+    repo_id = f"hannesthu/{model_name}"
+    model_path = hf_hub_download(repo_id=repo_id, filename="tl_model.pt")
+    tl_model = torch.load(model_path)
+
+    # Download the encoder file
+    encoder_path = hf_hub_download(repo_id=repo_id, filename="input&output_encoder.pkl")
+    with open(encoder_path, "rb") as f:
+        encoders = pickle.load(f)
+
+    # Create and return the TracrModel
+    return TracrModel(encoders["input_encoder"], encoders["output_encoder"], tl_model)

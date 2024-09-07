@@ -1,8 +1,14 @@
-from models.AnthropicChatModel import AnthropicChatModel
-from main import evaluate_model, visualize_results
+from transformerlens_models import load_tracr_model, load_model_from_hf
 
+#load model from local dataset
+tracr_model = load_tracr_model("dataset/make_hist")
+#...or directly from huggingface
+tracr_model = load_model_from_hf("make_hist")
 
-model = AnthropicChatModel("claude-3-5-sonnet-20240620")
-results = evaluate_model(model)
+#run the model on some input
+input = ["BOS", 1, 2, 3]
+out = tracr_model.run_with_cache(input)
+print("Original Decoding:", out)
 
-visualize_results(results)
+#or interact directly with the encapsulated hooked_transformer:
+hooked_tf = tracr_model.tl_model
