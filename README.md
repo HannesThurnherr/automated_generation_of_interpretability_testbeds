@@ -44,3 +44,25 @@ visualize_results(results)
 
 The evaluate_model() method will save the results of the evaluation to a JSON file and a continuous log of all the processes to a txt file (if set to verbose)
 The visualize_results() methods will take those results and both display and illustrate them using matplotlib and save the visualisation as a pdf file.
+
+
+### Using TracrBench models in TransformerLens
+You can use TraceBench models directly in TransformerLens. Do so with the following code:
+```python
+from transformerlens_models import load_tracr_model, load_model_from_hf
+
+#load model from local dataset
+tracr_model = load_tracr_model("dataset/make_hist")
+#...or directly from huggingface
+tracr_model = load_model_from_hf("make_hist")
+
+#run the model on some input
+input = ["BOS", 1, 2, 3]
+out = tracr_model.run_with_cache(input)
+print("Original Decoding:", out)
+
+#or interact directly with the encapsulated hooked_transformer:
+hooked_tf = tracr_model.tl_model
+```
+
+
